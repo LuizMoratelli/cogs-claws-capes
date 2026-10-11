@@ -143,3 +143,13 @@ Then boot the server once and check `server\logs\kubejs\server.log` for `[hero_g
 **What is in git and what is not:** the pack (mod list + pinned versions), the KubeJS gating, configs, server
 settings and all tools are in the repo. The `server\` folder itself (Forge, mod jars, **the world**) is not: it
 rebuilds from the repo with `build.py server`, except the world, which is what the backups are for.
+
+## Resetting the world
+
+- **Back to a backup:** stop the server, rename `server\world` to `world_old_<date>`, unzip the backup into `server\`
+  (it contains a `world` folder), start.
+- **Fresh copy of the same world:** stop the server, rename `server\world` to `world_old_<date>`, start. The seed is
+  pinned (`level-seed=8743628307628146557` in `server.properties`, also in `server-overrides/`), so the terrain is the
+  same; builds, inventories and XP start over. Whitelist, ops, passwords (`config/offlineauth/auth.json`) and the
+  TrueUUID name registry live outside the world folder and are kept.
+- Never delete a `world_old_*` folder until you are sure you will not want it back.
