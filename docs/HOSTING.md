@@ -38,13 +38,16 @@ mods, copies the KubeJS gating scripts and seeds `server\server.properties` with
 Double-click `server\start.bat`. The first boot takes 1-2 minutes. It is ready when the console prints
 `Done (...)! For help, type "help"`.
 
-In that console:
+Add people to the whitelist with the helper. It writes the ID the server will really see: a paid account's real ID,
+or the offline ID for friends without one. Plain `whitelist add` gets this wrong in offline mode.
 
 ```
-op YourMinecraftName
-whitelist add FriendName1
-whitelist add FriendName2
+python tools\whitelist.py add LuizMoratelli --paid
+python tools\whitelist.py add FriendWithoutAccount --offline
+python tools\whitelist.py list
 ```
+
+Then in the server console: `whitelist reload`, and once, `op <your name>`.
 
 To shut down, always type `stop` and wait. Do not close the window, or the last minutes of the world may not be saved.
 
@@ -68,9 +71,16 @@ Playit has to be running whenever the server is. You can set it to start with Wi
 
 ### 4. Security checklist (already applied unless noted)
 
-- `online-mode=true`: only real Mojang/Microsoft accounts can join (no cracked clients pretending to be you).
-- `white-list=true` + `enforce-whitelist=true`: only the names you add can join. Even if someone finds the address,
-  they get "You are not white-listed".
+- **Paid and non-paid accounts can both join** (`online-mode=false`), made safe by two mods:
+  - **TrueUUID** (client + server) verifies paid accounts with Mojang, so they keep their real ID and skin. A name
+    that has logged in verified can never be used offline again (`knownPremiumDenyOffline = true`), and an offline
+    player cannot take a name that belongs to a paid account (`allowOfflineForUnknownOnly = true`).
+  - **OfflineAuth** (server) makes offline accounts `/register <password> <password>` once and `/login <password>`
+    every time. 5 wrong passwords lock the account for 60 s, and players who do not log in within 60 s are kicked.
+    Messages are in Portuguese (`config/offlineauth/config.json`).
+  - Forgot a password: stop the server, delete that player's entry in `server/config/offlineauth/auth.json`, start it.
+- `white-list=true` + `enforce-whitelist=true`: only the people you add can join (use `tools\whitelist.py`, see step 2).
+  Even if someone finds the address, they get "You are not white-listed".
 - `enable-rcon=false`, `enable-query=false`: no remote admin port.
 - **No Windows Firewall rule and no router rule are needed.** Playit's connection is outbound, so do not "allow"
   Java on public networks if Windows asks. Click Cancel.

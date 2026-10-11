@@ -126,3 +126,23 @@ packs no longer register (20 powers, 10 recipes: leftover data, nothing to load)
 Method: `grep "/ERROR]" boot.log`, normalised and diffed against the previous boot's set (`comm -13`).
 Gating with Iron's Spells' workstations: `EXTRA_GATED` in `tools/scan_hero_recipes.py`.
 Evidence: [boot-test-2026-10-11-c.txt](references/data/boot-test-2026-10-11-c.txt).
+
+## 7. Offline accounts (pack 0.4.0, 2026-10-11)
+
+Need: friends without a paid account. Candidates (Modrinth, Forge 1.20.1): `auth` (68k, a datapack: passwords in
+scoreboards, "kicks" by crashing the client with particles - rejected), `nedologin` (46k, SimpleLogin fork, rc build),
+`offlineauth` (4k) + `trueuuid` (30k), same author, LGPL-3.0, updated 2025-10 / 2026-09. Chosen: TrueUUID + OfflineAuth,
+because TrueUUID keeps paid accounts verified (real UUID + skin) and denies offline reuse of verified names.
+
+- Test: a copy of the server in `server-test/` (`CCC_SERVER_DIR` override in `build.py`), port 25566, so the live
+  server kept running. Boot OK, both mods load, configs generated. Defaults kept: `knownPremiumDenyOffline = true`,
+  `allowOfflineForUnknownOnly = true`, `allowOfflineOnTimeout = false`.
+- OfflineAuth writes its `config.json` in the JVM default charset (cp1252 here), which turned its Chinese messages into
+  `?`. Shipped `server-overrides/config/offlineauth/config.json`: Portuguese, pure ASCII with `§` escapes, so the
+  charset cannot matter. The mod keeps it on boot (checked).
+- Whitelist: vanilla matches by UUID, and in offline mode `whitelist add` writes the offline UUID, which a verified paid
+  player never has. `tools/whitelist.py` writes the right one. Control: its offline UUID for `Notch` equals the
+  known `b50ad385-829d-3141-a216-7e7d7539ba7f`.
+- Not tested here: real joins (needs two clients). First join by the owner should show the green "verified" badge.
+- Prism Launcher's official build only allows offline accounts after adding a Microsoft account that owns Minecraft
+  (community sources, no official statement found); forks such as Freesm Launcher remove that.

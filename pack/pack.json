@@ -1,6 +1,6 @@
 {
   "name": "Cogs, Claws & Capes",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
   "minecraft": "1.20.1",
   "loader": "forge",
@@ -83,9 +83,14 @@
     ],
     "magic": [
       "irons-spells-n-spellbooks"
+    ],
+    "server_access": [
+      "trueuuid",
+      "offlineauth"
     ]
   },
   "pins": {},
   "hero_namespaces_note": "Mods whose crafting recipes are rewritten into Create-gated recipes live in overrides/kubejs/server_scripts/hero_gating.js (HERO_MODS).",
-  "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test. irons_lib 1.20.1-2.x (irons-spells-n-spellbooks). dampened (FSang's power-dampening blocks/effect dampened:genetic; optional per Modrinth, but its power fails to parse without it)."
+  "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test. irons_lib 1.20.1-2.x (irons-spells-n-spellbooks). dampened (FSang's power-dampening blocks/effect dampened:genetic; optional per Modrinth, but its power fails to parse without it).",
+  "server_access_note": "online-mode=false so offline (non-paid) accounts can join. TrueUUID (client+server) verifies paid accounts with Mojang and blocks offline reuse of verified names; OfflineAuth (server) makes offline accounts /register + /login."
 }

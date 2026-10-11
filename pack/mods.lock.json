@@ -813,6 +813,21 @@
       "client": "required",
       "server": "required"
     },
+    "offlineauth": {
+      "title": "OfflineAuth",
+      "group": "server_access",
+      "project_id": "DQxq3OlC",
+      "version_id": "eCq3jJ8h",
+      "version_number": "1.0.3",
+      "published": "2025-10-31",
+      "file": "offlineauth-1.0.3.jar",
+      "url": "https://cdn.modrinth.com/data/DQxq3OlC/versions/eCq3jJ8h/offlineauth-1.0.3.jar",
+      "sha1": "c357ee6604a997852a4a63ac54d191cc59d4e7eb",
+      "sha512": "1ec3fb4f6ae886bfbffbd04b560ba1b51af20fc35342dbc9f94babef6afd64aa8bd85dae313411f414b631aa61047a48c76de235bb971fe44c9229e0a678ff1a",
+      "size": 23855,
+      "client": "unsupported",
+      "server": "required"
+    },
     "omni-extras": {
       "title": "Omni Extras: An Alien Evo Addonpack",
       "group": "superheroes",
@@ -1080,6 +1095,21 @@
       "sha1": "8b70aed9e35ad78fdc2f9fcb94a29dc64ba8d757",
       "sha512": "ac5a057a9fdafa851fca05be77ba68548082119e0b7ac19f2197e418da703bf60f341e65ec76ddc73003682b89159850f6b9dff65147df3c0c9b8e6f58460ce0",
       "size": 520148,
+      "client": "required",
+      "server": "required"
+    },
+    "trueuuid": {
+      "title": "TrueUUID",
+      "group": "server_access",
+      "project_id": "fMgRLYNA",
+      "version_id": "DBcYjyan",
+      "version_number": "1.3.0+forge-1.20.1",
+      "published": "2026-09-13",
+      "file": "trueuuid-1.3.0-forge-1.20.1.jar",
+      "url": "https://cdn.modrinth.com/data/fMgRLYNA/versions/DBcYjyan/trueuuid-1.3.0-forge-1.20.1.jar",
+      "sha1": "2afe019a3b772da9c613f6145a4b7321b3daac50",
+      "sha512": "a8e2800e80f602d4f496f2356e9c3b437f21c9ea864416fde49d80075fbb5535f0e0d3d5250b5b009058b8dff4812fb8e0d6df8f361fcb25b6d409e36abd71b3",
+      "size": 296603,
       "client": "required",
       "server": "required"
     },

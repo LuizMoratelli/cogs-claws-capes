@@ -2,11 +2,11 @@
 
 ## Install (each player, once)
 
-You need a paid Minecraft Java account and the pack file `cogs-claws-capes-<version>.mrpack` from the host.
+You need Minecraft Java (a paid account, or see [JOGAR-SEM-CONTA.md](JOGAR-SEM-CONTA.md) without one) and the pack file `cogs-claws-capes-<version>.mrpack` from the host.
 
 1. Install **Prism Launcher**: https://prismlauncher.org (free, open source). It downloads the right Java by itself.
 2. Log in: **Accounts -> Manage Accounts -> Add Microsoft**.
-3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 79 mods.
+3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 81 mods.
 4. Right-click the instance -> **Edit -> Settings -> Memory**: set **Maximum memory allocation to 6144-8192 MiB**
    (6-8 GB). Less than 6 GB will stutter.
 5. **Launch.** The first start takes a few minutes.

@@ -5,3 +5,4 @@ tools/jdk/
 tools/jre17.*
 tools/jdk_extract/
 __pycache__/
+server-test/

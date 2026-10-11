@@ -7,7 +7,7 @@ A Minecraft modpack for a private group: **Create** engineering (cogs), **revive
 |---|---|
 | Minecraft | **1.20.1** |
 | Loader | **Forge 47.4.10** (Java 17) |
-| Mods | 79 (62 chosen + 17 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
+| Mods | 81 (64 chosen + 17 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
 | Client RAM | 6-8 GB allocated |
 | Server RAM | 8 GB (`server/user_jvm_args.txt`) |
 
@@ -65,6 +65,13 @@ python tools/build.py mrpack   # -> dist/cogs-claws-capes-<version>.mrpack  (giv
 python tools/build.py server   # -> server/  (Forge + server-side mods + configs + start.bat)
 python tools/scan_hero_recipes.py   # after a hero-mod update: regenerate the gating targets
 ```
+
+## Who can join
+
+Paid and non-paid (offline) accounts. **TrueUUID** verifies paid accounts and protects their names; **OfflineAuth**
+gives offline accounts a password (`/register`, `/login`). The whitelist stays on: `python tools/whitelist.py add NAME
+--paid|--offline`. Details: [docs/HOSTING.md](docs/HOSTING.md); for friends without an account (pt-BR):
+[docs/JOGAR-SEM-CONTA.md](docs/JOGAR-SEM-CONTA.md).
 
 ## Fixes shipped with the pack
 
