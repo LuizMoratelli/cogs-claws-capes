@@ -1,0 +1,10 @@
+# Server boot test, 2026-10-11 - python tools/build.py server, then server boot with 'stop' piped in
+[14:17:24] [Server thread/INFO] [minecraft/DedicatedServer]: Done (3.381s)! For help, type "help"
+[14:17:18] [INFO] hero_gating.js#101: [hero_gating] targets 319 tailoring + 88 crafting; rewrote 319 tailoring, 51 -> mechanical crafting, 27 -> heated mixing, 10 skipped (result item not registered), 0 failed
+[14:17:24] [INFO] hero_gating.js#111: [hero_gating] control palladium:tailoring_bench: create:mechanical_crafting (want create:mechanical_crafting) OK
+[14:17:24] [INFO] hero_gating.js#111: [hero_gating] control fsang:compound_v: create:mixing (want create:mixing) OK
+[14:17:24] [INFO] hero_gating.js#111: [hero_gating] control fsang:all_might_young: palladium:suit_set_tailoring (want palladium:suit_set_tailoring) OK
+[14:17:24] [INFO] hero_gating.js#111: [hero_gating] control cogsclawscapes:hero_core: create:sequenced_assembly (want create:sequenced_assembly) OK
+[14:17:24] [INFO] hero_gating.js#111: [hero_gating] control satsu_iron_man_addon:additamens/emp: create:mechanical_crafting (want create:mechanical_crafting) OK
+[14:17:24] [INFO] hero_gating.js#126: [hero_gating] control fsang:all_might_young needs core: true (want true)
+[14:17:24] [INFO] hero_gating.js#127: [hero_gating] control palladium:lead_circuit needs core: false (want false)

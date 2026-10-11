@@ -1,0 +1,83 @@
+# Research: version, mods, gating, hosting (2026-10-11)
+
+This page records the data and how it was obtained, so the choices can be re-checked or re-run later.
+
+## 1. Which Minecraft version
+
+**Method:** Modrinth API v2, `GET /project/<slug>/version`, grouped by (game version, loader), newest publish date
+per group. Queried live on 2026-10-11.
+
+| Mod (pillar) | Newest MC with builds | Note |
+|---|---|---|
+| Palladium `threetag-palladium` (heroes framework) | **1.20.1** only (forge/neoforge/fabric, 2026-08-23) | `mpalladium` (1.21.x) is an unrelated mod |
+| FSang18's Heroes, Satsu's Iron Man, Powerborne, Arrzee's, Legends Superheroes | **1.20.1** | all active in Sep/Oct 2026 |
+| Fossils & Archeology Revival | **1.20.1** (2026-06-08) | no 1.21 build |
+| Alex's Caves | 1.20.1 (2024-10-26) | final |
+| Create | 1.21.1 NeoForge (2026-04) **and** 1.20.1 Forge 6.0.8 (2025-11) | most addons are 1.20.1 |
+| Jurassic Reborn | 1.20.1 and 1.21.1 | alternative dino mod, not used |
+| Marvel Superheroes (`marvel-superheroes`) | 1.21.1 NeoForge, last update 2025-07 | the only 1.21 hero mod: 44k downloads, inactive |
+
+**Conclusion:** 1.20.1 is the newest version where all three pillars are well supported. On 1.21.1 the superhero
+pillar would be a single inactive mod. Forge was chosen over NeoForge on 1.20.1 because every hero pack, F&A and the
+Create addons publish Forge builds. Forge `1.20.1-recommended` = **47.4.10** (from
+`files.minecraftforge.net/.../promotions_slim.json`).
+
+## 2. Mod selection
+
+Candidates were checked with `cc_check`-style queries (Modrinth `/project/<slug>/version?loaders=["forge"]&game_versions=["1.20.1"]`):
+availability, last publish date, downloads and declared client/server side. `pack/pack.json` holds the choice and
+`tools/build.py lock` pins exact versions and hashes in `pack/mods.lock.json`.
+
+Hero packs chosen by downloads and activity: FSang18's Heroes (446k, updated 2026-10-05), Satsu's Iron Man (122k,
+2026-10-09), Powerborne Heroes (71k, 2026-09-04). Gods & Heroes (Palladium) was skipped because it pulls in Origins.
+
+### Undeclared dependencies (found by booting the server, not by the API)
+
+The first boot failed with a Forge `ModLoadingException`. The Modrinth pages do not list these dependencies:
+
+| Missing modId | Needed by | Modrinth project |
+|---|---|---|
+| `kotlinforforge` >= 4.3.0 | `flightlib` (bundled by Create Jetpack) | `kotlin-for-forge` |
+| `corewithstuff` | Satsu's Iron Man | `corewithstuff` |
+| `gravecore` | Satsu's Iron Man | `gravestone-core` (checked: its `META-INF/mods.toml` declares `modId = "gravecore"`) |
+
+They are listed under `undeclared_dependencies` in `pack/pack.json`.
+
+## 3. Hero gating: how it was built and verified
+
+- `tools/scan_hero_recipes.py` reads every `data/*/recipes/*.json` in `server/mods/*.jar` (10,545 recipes).
+  Results: **319** Palladium tailoring recipes (`palladium:suit_set_tailoring` / `item_tailoring`), and **88** crafting
+  recipes whose output is an END item (an item no other recipe uses as an ingredient), minus cosmetics, tools and ammo.
+  The output is `docs/references/data/hero_targets.json` + `overrides/kubejs/server_scripts/generated/hero_targets.js`.
+- `hero_gating.js` rewrites them in `ServerEvents.recipes`.
+- **KubeJS 6 gotchas found on the way:**
+  - `event.forEachRecipe` runs its callback on worker threads, and Rhino then throws `redeclaration of var`.
+    Use `event.findRecipes(...)` and loop on the main thread.
+  - `findRecipes` returns an immutable Java list. Rhino cannot call `size()`/`get()` on it
+    (`MemberBox cannot access ImmutableCollections$ListN`). Wrap it in `new ArrayList(...)`.
+  - `event.custom({...create:mechanical_crafting...})` from a JS object fails with "ItemStack 'result' can't be empty".
+    The typed `event.recipes.create.mechanical_crafting(Item.of(..), pattern, {k: Ingredient.of(json)})` works.
+  - 10 of FSang/Satsu's own recipes produce items those mods never register (vanilla already rejects them, e.g.
+    `fsang:necrotech_dna`). These are skipped and counted.
+- **Boot evidence** (2026-10-11, last boot): [data/boot-test-2026-10-11.txt](references/data/boot-test-2026-10-11.txt):
+  `rewrote 319 tailoring, 51 -> mechanical crafting, 27 -> heated mixing, 10 skipped, 0 failed`, and 7 controls OK,
+  including one in each direction: a suit **needs** the Hero Core, and Palladium's `lead_circuit` does **not**.
+- Remaining log warnings come from mods' own data (CoreWithStuff and Steam 'n' Rails recipes for items they do not
+  register, and one Satsu Mark 48 recipe). They are harmless and not ours to fix.
+
+## 4. Hosting research
+
+- playit.gg: an outbound tunnel agent, so there is no port forwarding and the home IP is hidden. The free tier covers a
+  Minecraft tunnel ([teklynk guide](https://www.teklynk.dev/blog/how-to-host-a-game-server-from-your-home-using-playItgg),
+  [Pinggy's overview of alternatives](https://pinggy.io/blog/best_playit_gg_alternatives/)). No independent security audit
+  was found. The protection here comes from `online-mode` + whitelist, which hold no matter which tunnel is used.
+- Paid 8 GB prices (affiliate-supported reviews, conflicting, so confirm on each host's site):
+  [itechguides modded hosting 2026](https://www.itechguides.com/best/modded-minecraft-server-hosting/),
+  [dathost 2026 rankings](https://dathost.com/blog/top-minecraft-server-hosts-for-modding).
+
+## Not yet verified
+
+- **Client boot.** Only the dedicated server was boot-tested here. The client `.mrpack` uses the same lock, plus
+  6 client-only mods (Embeddium, Entity Culling, ImmediatelyFast, Mouse Tweaks, Xaero's x2). It still needs one launch
+  in Prism and one join.
+- Balance in real play: whether 3 loops per Hero Core feels right. Change `.loops(3)` in `hero_gating.js`.

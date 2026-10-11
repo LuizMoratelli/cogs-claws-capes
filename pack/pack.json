@@ -1,0 +1,78 @@
+{
+  "name": "Cogs, Claws & Capes",
+  "version": "0.1.0",
+  "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
+  "minecraft": "1.20.1",
+  "loader": "forge",
+  "loader_version": "47.4.10",
+  "mods": {
+    "foundation": [
+      "jei",
+      "jade",
+      "appleskin",
+      "mouse-tweaks",
+      "clumps",
+      "xaeros-minimap",
+      "xaeros-world-map",
+      "sophisticated-backpacks",
+      "waystones",
+      "farmers-delight",
+      "supplementaries",
+      "comforts",
+      "corpse",
+      "carry-on",
+      "iron-chests",
+      "toms-storage",
+      "open-parties-and-claims",
+      "chunky",
+      "spark",
+      "yungs-better-dungeons",
+      "yungs-better-mineshafts",
+      "yungs-better-strongholds",
+      "biomes-o-plenty",
+      "terralith",
+      "kubejs",
+      "kubejs-create",
+      "simple-backups"
+    ],
+    "performance": [
+      "modernfix",
+      "ferrite-core",
+      "embeddium",
+      "entityculling",
+      "immediatelyfast"
+    ],
+    "create": [
+      "create",
+      "create-steam-n-rails",
+      "createaddition",
+      "create-enchantment-industry",
+      "create-deco",
+      "create-connected",
+      "create-central-kitchen",
+      "create-new-age",
+      "create-big-cannons",
+      "create-jetpack",
+      "create-diesel-generators"
+    ],
+    "dinosaurs": [
+      "fossils-and-archeology-revival",
+      "alexs-caves",
+      "alexs-mobs"
+    ],
+    "superheroes": [
+      "threetag-palladium",
+      "fsang18s-heropack",
+      "satsu-iron-man-addon",
+      "powerborne-heroes"
+    ],
+    "undeclared_dependencies": [
+      "kotlin-for-forge",
+      "corewithstuff",
+      "gravestone-core"
+    ]
+  },
+  "pins": {},
+  "hero_namespaces_note": "Mods whose crafting recipes are rewritten into Create-gated recipes live in overrides/kubejs/server_scripts/hero_gating.js (HERO_MODS).",
+  "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test."
+}

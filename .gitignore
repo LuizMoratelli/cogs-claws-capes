@@ -1,0 +1,7 @@
+# Build outputs - rebuilt from pack/mods.lock.json + overrides by tools/build.py
+server/
+dist/
+tools/jdk/
+tools/jre17.*
+tools/jdk_extract/
+__pycache__/
