@@ -6,3 +6,5 @@ tools/jre17.*
 tools/jdk_extract/
 __pycache__/
 server-test/
+tools/jar-cache/
+tools/forge-client/

@@ -5,6 +5,7 @@ O servidor aceita contas offline com senha. Passo a passo:
 1. **Launcher:** o Prism oficial so deixa criar conta offline se o PC tiver uma conta Microsoft que comprou o
    Minecraft. Sem isso, use um launcher que aceite contas offline e importe arquivos `.mrpack` (por exemplo o
    Freesm Launcher, que e uma copia do Prism). Baixe so do site oficial do launcher.
+   Usa TLauncher? Ele nao importa `.mrpack`: siga [TLAUNCHER.md](TLAUNCHER.md).
 2. **Conta offline:** crie uma conta offline com um **nome unico** (por exemplo `Pedro_CCC`). Nomes que ja
    pertencem a uma conta paga sao bloqueados.
 3. **Modpack:** Adicionar instancia -> Importar -> cole o link do `.mrpack` da ultima versao:

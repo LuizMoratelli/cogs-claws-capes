@@ -3,6 +3,7 @@
   python tools/build.py lock      resolve pack/pack.json against the Modrinth API -> pack/mods.lock.json
   python tools/build.py mrpack    write dist/<name>-<version>.mrpack (import into Prism / Modrinth App / ATLauncher)
   python tools/build.py server    build/refresh a dedicated server in server/ (Java 17 + Forge + server-side mods + overrides)
+  python tools/build.py clientzip  zip of mods + configs for launchers without .mrpack import (share privately)
   python tools/build.py all       lock + mrpack + server
 
 Only the Python standard library is used. The lock pins exact Modrinth version ids + hashes, so a build is
@@ -294,8 +295,69 @@ def cmd_server():
     print("server: start with server\\start.bat")
 
 
+def cmd_clientzip():
+    """A plain zip of a client's game-folder files (mods + kubejs/config overrides) for launchers that cannot import
+    .mrpack (e.g. TLauncher). It contains the mod jars themselves, so share it PRIVATELY - never in a public release."""
+    pack = json.loads(PACK.read_text(encoding="utf-8"))
+    lock = load_lock()
+    cache = ROOT / "tools" / "jar-cache"
+    DIST.mkdir(exist_ok=True)
+    out = DIST / f"cogs-claws-capes-{pack['version']}-client-files.zip"
+    n_mods = 0
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for e in lock["mods"].values():
+            if e["client"] == "unsupported":
+                continue
+            jar = SERVER / "mods" / e["file"]
+            if not jar.exists():  # client-only mods are not on the server: download (hash-checked) into a cache
+                jar = cache / e["file"]
+                download(e["url"], jar, e["sha1"])
+            if hashlib.sha1(jar.read_bytes()).hexdigest() != e["sha1"]:
+                raise SystemExit(f"ERROR {jar} does not match the lock")
+            z.write(jar, f"mods/{e['file']}")
+            n_mods += 1
+        n_over = 0
+        for f in OVERRIDES.rglob("*"):
+            if f.is_file():
+                z.write(f, f.relative_to(OVERRIDES).as_posix())
+                n_over += 1
+        # Forge pre-installed (versions/ + libraries/), so a launcher that lists only some Forge builds still gets the
+        # exact one: create_central_kitchen requires forge [47.4.10,48).
+        fc = forge_client_install(lock)
+        n_forge = 0
+        for sub in ("versions", "libraries"):
+            for f in (fc / sub).rglob("*"):
+                if f.is_file():
+                    z.write(f, f.relative_to(fc).as_posix())
+                    n_forge += 1
+        z.writestr("LEIA-ME.txt",
+                   f"Cogs, Claws & Capes {pack['version']} - arquivos para instalar sem .mrpack (ex.: TLauncher)\n"
+                   f"Minecraft {lock['minecraft']} + Forge {lock['loader_version']} (ja incluido)\n"
+                   "Copie TUDO (mods, kubejs, versions, libraries) para a pasta do jogo (%APPDATA%\\.minecraft).\n"
+                   "Passo a passo: docs/TLAUNCHER.md no GitHub do modpack.\n")
+    print(f"clientzip: {out} ({n_mods} mods, {n_over} override files, {n_forge} Forge files, "
+          f"{out.stat().st_size / 1e6:.0f} MB) - share privately")
+
+
+def forge_client_install(lock):
+    """Run the Forge installer headless (--installClient) into tools/forge-client once; returns that folder."""
+    mc, fl = lock["minecraft"], lock["loader_version"]
+    fc = ROOT / "tools" / "forge-client"
+    if (fc / "versions" / f"{mc}-forge-{fl}" / f"{mc}-forge-{fl}.json").exists():
+        return fc
+    fc.mkdir(parents=True, exist_ok=True)
+    (fc / "launcher_profiles.json").write_text('{"profiles":{}}')  # the installer refuses a folder without one
+    fv = f"{mc}-{fl}"
+    inst = fc / "forge-installer.jar"
+    download(f"https://maven.minecraftforge.net/net/minecraftforge/forge/{fv}/forge-{fv}-installer.jar", inst)
+    print(f"clientzip: installing Forge {fv} client files")
+    subprocess.run([str(java_exe()), "-jar", inst.name, "--installClient", str(fc)], cwd=fc, check=True,
+                   stdout=subprocess.DEVNULL)
+    return fc
+
+
 if __name__ == "__main__":
-    steps = {"lock": [cmd_lock], "mrpack": [cmd_mrpack], "server": [cmd_server],
+    steps = {"lock": [cmd_lock], "mrpack": [cmd_mrpack], "server": [cmd_server], "clientzip": [cmd_clientzip],
              "all": [cmd_lock, cmd_mrpack, cmd_server]}
     if len(sys.argv) != 2 or sys.argv[1] not in steps:
         raise SystemExit(__doc__)
