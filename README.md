@@ -7,7 +7,7 @@ A Minecraft modpack for a private group: **Create** engineering (cogs), **revive
 |---|---|
 | Minecraft | **1.20.1** |
 | Loader | **Forge 47.4.10** (Java 17) |
-| Mods | 69 (53 chosen + 16 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
+| Mods | 71 (55 chosen + 16 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
 | Client RAM | 6-8 GB allocated |
 | Server RAM | 8 GB (`server/user_jvm_args.txt`) |
 
@@ -22,7 +22,8 @@ hero pack) and Fossils & Archeology Revival stop at 1.20.1, and Create's largest
 - **Dinosaurs:** Fossils & Archeology Revival (dig fossils, extract DNA, hatch dinosaurs), Alex's Caves (Primordial Caves),
   Alex's Mobs.
 - **Superheroes:** Palladium + FSang18's Heroes (hundreds of Marvel/DC suits and powers), Satsu's Iron Man (every Mark,
-  suit-up animations), Powerborne Heroes.
+  suit-up animations), Powerborne Heroes, and **Ben 10**: Alien Evolution (the Omnitrix, aliens unlocked by DNA codes
+  found through archaeology) + Omni Extras (more aliens).
 - **Foundation:** JEI, Jade, Xaero's maps, Sophisticated Backpacks, Waystones, Farmer's Delight, Supplementaries,
   Comforts, Corpse, Carry On, Iron Chests, Tom's Storage, Open Parties and Claims, YUNG's structures, Biomes O' Plenty,
   Terralith, KubeJS, Simple Backups, plus performance mods (ModernFix, FerriteCore, Embeddium, Entity Culling, ImmediatelyFast).
@@ -36,10 +37,10 @@ The gating is [overrides/kubejs/server_scripts/hero_gating.js](overrides/kubejs/
    That takes brass-tier Create, fossil hunting and a Nether trip.
 2. The **Tailoring Bench**, where every suit is made, needs a **Mechanical Crafter** and a Hero Core.
 3. **Every suit** (319 tailoring recipes) costs one more Hero Core.
-4. **Every power, serum and gadget** (78 recipes: Compound V, Extremis, spider serum, Iron Man add-ons, hero
-   workstations...) leaves the crafting table. Shaped recipes become Create Mechanical Crafting with an extra Hero Core;
+4. **Every power, serum and gadget** (83 recipes: Compound V, Extremis, spider serum, Iron Man add-ons, the
+   **Omnitrix** and its workbench, hero workstations...) leaves the crafting table. Shaped recipes become Create Mechanical Crafting with an extra Hero Core;
    shapeless recipes become heated Create Mixing with a Hero Core.
-   Cosmetics (capes, scarves, speed trails, dyes) and basic parts stay cheap.
+   Cosmetics (capes, scarves, speed trails, colour variants) and basic parts stay cheap.
 
 The list of targets is generated from the jars by `tools/scan_hero_recipes.py`, so it follows mod updates. The
 server prints a self-check on every boot (`logs/kubejs/server.log`, lines `[hero_gating] control ... OK`).

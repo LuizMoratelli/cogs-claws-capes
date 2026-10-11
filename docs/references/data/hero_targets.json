@@ -4,7 +4,9 @@
   "satsu_iron_man_addon",
   "powerborne",
   "pantheonsent",
-  "gravecore"
+  "gravecore",
+  "alienevo",
+  "omni_extras"
  ],
  "tailoring": [
   "fsang:a_train_show",
@@ -328,6 +330,31 @@
   "satsu_iron_man_addon:war_machine/marks/mark_06/main"
  ],
  "crafting_end_items": [
+  {
+   "id": "alienevo:galvan_pod",
+   "type": "minecraft:crafting_shaped",
+   "output": "alienevo:galvan_pod"
+  },
+  {
+   "id": "alienevo:machine_scroll",
+   "type": "minecraft:crafting_shaped",
+   "output": "alienevo:machine_scroll"
+  },
+  {
+   "id": "alienevo:omnitrix_workbench",
+   "type": "minecraft:crafting_shaped",
+   "output": "alienevo:omnitrix_workbench"
+  },
+  {
+   "id": "alienevo:prototype_omnitrix",
+   "type": "minecraft:crafting_shaped",
+   "output": "alienevo:prototype_omnitrix"
+  },
+  {
+   "id": "alienevo:upgrade_crystal",
+   "type": "minecraft:crafting_shaped",
+   "output": "alienevo:upgrade_crystal"
+  },
   {
    "id": "fsang:ai_edith",
    "type": "minecraft:crafting_shapeless",

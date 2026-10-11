@@ -6,7 +6,7 @@ You need a paid Minecraft Java account and the pack file `cogs-claws-capes-<vers
 
 1. Install **Prism Launcher**: https://prismlauncher.org (free, open source). It downloads the right Java by itself.
 2. Log in: **Accounts -> Manage Accounts -> Add Microsoft**.
-3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 69 mods.
+3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 71 mods.
 4. Right-click the instance -> **Edit -> Settings -> Memory**: set **Maximum memory allocation to 6144-8192 MiB**
    (6-8 GB). Less than 6 GB will stutter.
 5. **Launch.** The first start takes a few minutes.
@@ -29,7 +29,9 @@ Press **R** on any item to see how it is made and **U** to see what uses it (JEI
    *deploy Bio Fossil -> deploy Diamond -> deploy Blaze Rod -> press*.
 6. **Tailoring Bench:** built in Mechanical Crafters, it needs a Hero Core. Every hero suit is made here, and **each
    suit costs another Hero Core**.
-7. **Powers and gadgets** (serums, DNA, Iron Man add-ons, hero workstations) are made in **Mechanical Crafters** or a
+7. **Ben 10:** brush suspicious sand and gravel (archaeology) for alien **DNA codes**. The **Prototype Omnitrix** and
+   its workbench are Mechanical Crafter recipes that need a Hero Core.
+8. **Powers and gadgets** (serums, DNA, Iron Man add-ons, hero workstations) are made in **Mechanical Crafters** or a
    **heated Mixer**, and each needs a Hero Core.
 
 Plan for a factory that makes Hero Cores automatically. That is where the whole group's Create, dinosaur and Nether

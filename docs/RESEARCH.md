@@ -81,3 +81,23 @@ They are listed under `undeclared_dependencies` in `pack/pack.json`.
   6 client-only mods (Embeddium, Entity Culling, ImmediatelyFast, Mouse Tweaks, Xaero's x2). It still needs one launch
   in Prism and one join.
 - Balance in real play: whether 3 loops per Hero Core feels right. Change `.loops(3)` in `hero_gating.js`.
+
+## 5. Ben 10 (added 2026-10-11, pack 0.2.0)
+
+Modrinth search `ben 10` / `omnitrix` / `alien evo`, filtered to 1.20.1:
+
+| Project | Downloads | Updated | Notes |
+|---|---|---|---|
+| **Alien Evolution** `alienevo` | 408k | 2026-03-31 | Palladium-based (same framework as our heroes). **Chosen.** |
+| **Omni Extras** `omni-extras` | 72k | 2026-02-15 | AlienEvo addon, extra aliens. **Chosen.** |
+| Into the Omniverse | 147k | 2026-02-14 | Omniverse expansion; candidate for later |
+| Anonimus Ben 10 / Ben 10 Universe | 50k / 32k | 2024 / "no longer updated" | stale, skipped |
+
+AlienEvo's jar holds 25 `minecraft:crafting_shaped` recipes (namespace `alienevo`); the Omnitrix is
+`alienevo:prototype_omnitrix` + `alienevo:omnitrix_workbench`. Alien DNA codes come from archaeology loot tables
+(`data/alienevo/loot_tables/archaeology/codes_common.json`, `codes_rare.json`). Omni Extras' namespace is `omni_extras`.
+Both namespaces were added to `HERO_NS` in `tools/scan_hero_recipes.py`, which now also writes `global.HERO_NAMESPACES`
+so `hero_gating.js` no longer keeps its own list. Colour variants (`*_red`, `*_blue`...) and `machined_*`/`*_bar` are
+excluded as cosmetic/food. Boot: `rewrote 319 tailoring, 56 -> mechanical crafting, 27 -> heated mixing, 10 skipped,
+0 failed`, control `alienevo:prototype_omnitrix: create:mechanical_crafting OK`
+([boot-test-2026-10-11-b.txt](references/data/boot-test-2026-10-11-b.txt)).

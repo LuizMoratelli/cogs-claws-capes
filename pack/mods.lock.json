@@ -33,6 +33,21 @@
       "client": "required",
       "server": "required"
     },
+    "alienevo": {
+      "title": "Alien Evolution",
+      "group": "superheroes",
+      "project_id": "ZeVD5ZBy",
+      "version_id": "3H6HKG25",
+      "version_number": "1.1.3",
+      "published": "2026-03-31",
+      "file": "AlienEvo-1.1.3-forge.jar",
+      "url": "https://cdn.modrinth.com/data/ZeVD5ZBy/versions/3H6HKG25/AlienEvo-1.1.3-forge.jar",
+      "sha1": "a95574951c2d51e96ebd275b5ee344ac1d912915",
+      "sha512": "a7c54f18b0bcdbc0671465d2ef366acc706b982f9d753db35af84ef008bf8884c9284501cb880070f440dcccec2bc71fbcfb42c9b7123e6c68909a31efff5f07",
+      "size": 6264830,
+      "client": "required",
+      "server": "required"
+    },
     "appleskin": {
       "title": "AppleSkin",
       "group": "foundation",
@@ -677,6 +692,21 @@
       "size": 76237,
       "client": "required",
       "server": "unsupported"
+    },
+    "omni-extras": {
+      "title": "Omni Extras: An Alien Evo Addonpack",
+      "group": "superheroes",
+      "project_id": "FwDihxZA",
+      "version_id": "VU8gHmMj",
+      "version_number": "1.0.7.3",
+      "published": "2026-02-15",
+      "file": "omni-extras(1.0.7.3).jar",
+      "url": "https://cdn.modrinth.com/data/FwDihxZA/versions/VU8gHmMj/omni-extras%281.0.7.3%29.jar",
+      "sha1": "169bfe729517b6b33182fca790c1d7d29076fd7a",
+      "sha512": "191d0075c921797de7c70bbfa889c272d6cf3e88933676c02399b40edcdcaeae7e046704b58e4dee9f6c28d29978a39ac4aa8d92a633d1f36a3e461f7ea0c3a7",
+      "size": 3957523,
+      "client": "required",
+      "server": "required"
     },
     "open-parties-and-claims": {
       "title": "Open Parties and Claims",

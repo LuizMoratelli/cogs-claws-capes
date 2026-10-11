@@ -1,6 +1,6 @@
 {
   "name": "Cogs, Claws & Capes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
   "minecraft": "1.20.1",
   "loader": "forge",
@@ -64,7 +64,9 @@
       "threetag-palladium",
       "fsang18s-heropack",
       "satsu-iron-man-addon",
-      "powerborne-heroes"
+      "powerborne-heroes",
+      "alienevo",
+      "omni-extras"
     ],
     "undeclared_dependencies": [
       "kotlin-for-forge",

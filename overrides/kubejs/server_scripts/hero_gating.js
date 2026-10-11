@@ -52,7 +52,7 @@ ServerEvents.recipes(event => {
 
   // findRecipes is a plain list walked on this thread (forEachRecipe runs on worker threads, which breaks Rhino).
   var ArrayList = Java.loadClass('java.util.ArrayList')
-  var found = new ArrayList(event.findRecipes({ id: /^(fsang|satsu_iron_man_addon|powerborne|pantheonsent|gravecore):/ }))
+  var found = new ArrayList(event.findRecipes({ id: new RegExp('^(' + (global.HERO_NAMESPACES || []).join('|') + '):') }))
   for (var n = 0; n < found.size(); n++) {
     var r = found.get(n)
     var id = String(r.getId())
@@ -115,6 +115,7 @@ ServerEvents.loaded(event => {
   check('fsang:all_might_young', 'palladium:suit_set_tailoring')
   check('cogsclawscapes:hero_core', 'create:sequenced_assembly')
   check('satsu_iron_man_addon:additamens/emp', 'create:mechanical_crafting')
+  check('alienevo:prototype_omnitrix', 'create:mechanical_crafting')
   // A suit must now ask for a Hero Core; a plain Palladium part must not (control in both directions).
   const needsCore = id => {
     const opt = rm.byKey(id)
