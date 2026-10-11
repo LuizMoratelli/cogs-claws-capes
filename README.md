@@ -73,6 +73,13 @@ gives offline accounts a password (`/register`, `/login`). The whitelist stays o
 --paid|--offline`. Details: [docs/HOSTING.md](docs/HOSTING.md); for friends without an account (pt-BR):
 [docs/JOGAR-SEM-CONTA.md](docs/JOGAR-SEM-CONTA.md).
 
+## Optional hero keybinds
+
+Each release has a second download, `...-hero-keys.mrpack`: the same pack with every hero action under the left hand
+(powers on Z X C V B, page on G, Iron Man systems on R H Y ' J, Shift sprint, Ctrl crouch). Table (pt-BR):
+[docs/TECLAS.md](docs/TECLAS.md). Source of truth: `extras/keybinds-hero.txt`, also applied to an existing
+instance by `tools/fix_keybinds.py` (backup + `--restore`).
+
 ## Fixes shipped with the pack
 
 - `overrides/kubejs/data/`: two Iron's Spells loot tables that fail on 1.20.1 (crypt and citadel chests would be empty).

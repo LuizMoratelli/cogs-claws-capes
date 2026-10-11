@@ -1,6 +1,6 @@
 {
   "name": "Cogs, Claws & Capes",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
   "minecraft": "1.20.1",
   "loader": "forge",

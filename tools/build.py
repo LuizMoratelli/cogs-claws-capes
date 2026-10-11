@@ -136,15 +136,22 @@ def cmd_mrpack():
         "dependencies": {"minecraft": lock["minecraft"], "forge": lock["loader_version"]},
     }
     DIST.mkdir(exist_ok=True)
-    out = DIST / f"cogs-claws-capes-{pack['version']}.mrpack"
-    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("modrinth.index.json", json.dumps(index, indent=2))
-        n = 0
-        for p in OVERRIDES.rglob("*"):
-            if p.is_file():
-                z.write(p, "overrides/" + p.relative_to(OVERRIDES).as_posix())
+    # Two downloads: the plain pack, and an opt-in "-hero-keys" pack that also ships extras/keybinds-hero.txt as
+    # options.txt (only key lines: Minecraft fills every other option with its default on first launch).
+    variants = {"": None, "-hero-keys": ROOT / "extras" / "keybinds-hero.txt"}
+    for suffix, options in variants.items():
+        out = DIST / f"cogs-claws-capes-{pack['version']}{suffix}.mrpack"
+        with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+            z.writestr("modrinth.index.json", json.dumps(index, indent=2))
+            n = 0
+            for p in OVERRIDES.rglob("*"):
+                if p.is_file():
+                    z.write(p, "overrides/" + p.relative_to(OVERRIDES).as_posix())
+                    n += 1
+            if options:
+                z.write(options, "overrides/options.txt")
                 n += 1
-    print(f"mrpack: {out} ({len(files)} mods, {n} override files)")
+        print(f"mrpack: {out} ({len(files)} mods, {n} override files)")
 
 
 # ---------------------------------------------------------------- server

@@ -1,9 +1,11 @@
-r"""Fix the key conflicts this pack ships with, in one Prism instance (game must be CLOSED - it rewrites options.txt).
+r"""Apply the pack's hero keybind layout to one Prism instance, or restore the previous keys. Game must be CLOSED.
 
-  python tools/fix_keybinds.py [INSTANCE_DIR] [--hold-sprint]
+  python tools/fix_keybinds.py [INSTANCE_DIR] [--hold-sprint]     apply extras/keybinds-hero.txt (backs up first)
+  python tools/fix_keybinds.py [INSTANCE_DIR] --restore           put back the newest options.txt.bak-* backup
 
 Default instance: the newest cogs-claws-capes* folder in %APPDATA%\PrismLauncher\instances.
-Backs up options.txt first. --hold-sprint also installs extras/hold_to_sprint.js (sprint only while held).
+The layout (extras/keybinds-hero.txt) is the same file the "-hero-keys" .mrpack ships as its options.txt.
+--hold-sprint also installs extras/hold_to_sprint.js (sprint only while the key is held).
 """
 import os
 import shutil
@@ -13,18 +15,16 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-# key mapping name -> GLFW key token. Physical positions (US names): semicolon = Ç and backslash = the key left of Z
-# and grave.accent = the top-left key on a Brazilian ABNT2 keyboard.
-LAYOUT = {
-    "key.palladium.ability_2": "key.keyboard.i",             # was B: also opened the backpack + new waypoint
-    "key.palladium.ability_4": "key.keyboard.o",             # was M: also opened the map
-    "satsu_iron_man_addon.keys.weapons_system": "key.keyboard.z",
-    "satsu_iron_man_addon.keys.target_lock": "key.keyboard.period",
-    "satsu_iron_man_addon.keys.shield_enabling": "key.keyboard.semicolon",
-    "satsu_iron_man_addon.keys.refresh_heat": "key.keyboard.backslash",
-    "satsu_iron_man_addon.keys.modular_key": "key.keyboard.grave.accent",
-    "gui.xaero_enlarge_map": "key.keyboard.keypad.add",      # was Z
-}
+LAYOUT_FILE = ROOT / "extras" / "keybinds-hero.txt"
+
+
+def load_layout():
+    layout = {}
+    for line in LAYOUT_FILE.read_text(encoding="utf-8").splitlines():
+        if line.startswith("key_"):
+            name, _, value = line[4:].partition(":")
+            layout[name] = value
+    return layout
 
 
 def game_running(instance):
@@ -34,26 +34,39 @@ def game_running(instance):
                               "Select-Object -ExpandProperty CommandLine"], capture_output=True, text=True).stdout
     except OSError:
         return False
-    return str(instance).lower() in out.lower() or instance.name.lower() in out.lower()
+    return instance.name.lower() in out.lower()
+
+
+def find_instance(args):
+    if args:
+        return Path(args[0])
+    base = Path(os.environ["APPDATA"]) / "PrismLauncher" / "instances"
+    cands = sorted(base.glob("cogs-claws-capes*"), key=lambda p: p.stat().st_mtime)
+    if not cands:
+        raise SystemExit(f"ERROR no cogs-claws-capes instance in {base}")
+    return cands[-1]
 
 
 def main(argv):
-    hold = "--hold-sprint" in argv
     args = [a for a in argv if not a.startswith("--")]
-    if args:
-        inst = Path(args[0])
-    else:
-        base = Path(os.environ["APPDATA"]) / "PrismLauncher" / "instances"
-        cands = sorted(base.glob("cogs-claws-capes*"), key=lambda p: p.stat().st_mtime)
-        if not cands:
-            raise SystemExit(f"ERROR no cogs-claws-capes instance in {base}")
-        inst = cands[-1]
+    inst = find_instance(args)
     mc = inst / "minecraft"
     opts = mc / "options.txt"
     if not opts.exists():
         raise SystemExit(f"ERROR {opts} not found - launch the instance once first")
     if game_running(inst):
         raise SystemExit("ERROR the game is running. Close Minecraft first (it rewrites options.txt on exit).")
+
+    if "--restore" in argv:
+        backups = sorted(mc.glob("options.txt.bak-*"))
+        if not backups:
+            raise SystemExit("ERROR no backup to restore")
+        shutil.copy2(opts, opts.with_name(f"options.txt.before-restore-{datetime.now():%Y%m%d-%H%M%S}"))
+        shutil.copy2(backups[-1], opts)
+        print(f"{inst.name}: restored {backups[-1].name}")
+        return
+
+    layout = load_layout()
     backup = opts.with_name(f"options.txt.bak-{datetime.now():%Y%m%d-%H%M%S}")
     shutil.copy2(opts, backup)
     lines = opts.read_text(encoding="utf-8").splitlines()
@@ -61,16 +74,16 @@ def main(argv):
     for i, line in enumerate(lines):
         if line.startswith("key_"):
             name = line[4:].split(":", 1)[0]
-            if name in LAYOUT:
-                lines[i] = f"key_{name}:{LAYOUT[name]}"
+            if name in layout:
+                lines[i] = f"key_{name}:{layout[name]}"
                 seen.add(name)
-    for name in LAYOUT.keys() - seen:  # mapping not written yet: add it
-        lines.append(f"key_{name}:{LAYOUT[name]}")
+    for name in layout.keys() - seen:
+        lines.append(f"key_{name}:{layout[name]}")
     opts.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"{inst.name}: {len(LAYOUT)} keys set (backup: {backup.name})")
-    for k, v in LAYOUT.items():
-        print(f"  {k:45} {v.replace('key.keyboard.', '')}")
-    if hold:
+    print(f"{inst.name}: {len(layout)} keys set (backup: {backup.name}; undo with --restore)")
+    for k, v in layout.items():
+        print(f"  {k:48} {v.replace('key.keyboard.', '')}")
+    if "--hold-sprint" in argv:
         dest = mc / "kubejs" / "client_scripts" / "hold_to_sprint.js"
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(ROOT / "extras" / "hold_to_sprint.js", dest)
