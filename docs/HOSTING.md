@@ -130,3 +130,16 @@ python tools\build.py server    # refresh server\mods (your world and server.pro
 
 Then boot the server once and check `server\logs\kubejs\server.log` for `[hero_gating] ... 0 failed` and the
 `control ... OK` lines before you hand out the new `.mrpack`. Server and clients must use the **same** pack version.
+
+## Tasks HUD buttons (Scripts tab, group Minecraft)
+
+| Button | What it does |
+|---|---|
+| Boot Minecraft server | `server\start.bat` in its own window. Type `stop` there to shut down. |
+| Rebuild server (update mods/scripts) | `build.py server`. **Refuses while the server runs** (it checks the lock Minecraft holds on `world\session.lock`). Updates mods, KubeJS scripts and the pack-owned `server.properties` keys (`online-mode`, `enforce-secure-profile`, `allow-flight`, `white-list`, `enforce-whitelist`); your other settings and the world are kept. |
+| Backup world now | `tools\backup_world.py`: server stopped -> zips the world now; server running -> copies the newest Simple Backups zip (every 2 h) and tells you its age. Goes to `C:\Backup\cogs-claws-capes` (the server is on D:, so a dead disk does not take both), keeps 20, and re-reads each zip after writing. |
+| Add friend to whitelist | `tools\add_friend.bat`: asks the name and whether they own Minecraft, writes the right ID. Then `whitelist reload` in the server window. |
+
+**What is in git and what is not:** the pack (mod list + pinned versions), the KubeJS gating, configs, server
+settings and all tools are in the repo. The `server\` folder itself (Forge, mod jars, **the world**) is not: it
+rebuilds from the repo with `build.py server`, except the world, which is what the backups are for.

@@ -167,7 +167,53 @@ def java_exe():
     return exe
 
 
+# server.properties keys the pack owns: synced from server-overrides on every build (the rest stays as you set it).
+MANAGED_PROPERTIES = ("online-mode", "enforce-secure-profile", "allow-flight", "white-list", "enforce-whitelist")
+
+
+def server_running(server=None):
+    """True while a server has this world open: Minecraft holds an exclusive lock on world/session.lock."""
+    server = server or SERVER
+    props = server / "server.properties"
+    level = "world"
+    if props.exists():
+        for line in props.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.startswith("level-name="):
+                level = line.split("=", 1)[1].strip() or "world"
+    lock = server / level / "session.lock"
+    if not lock.exists():
+        return False
+    try:
+        with open(lock, "rb") as f:
+            f.read(1)
+        return False
+    except PermissionError:
+        return True
+
+
+def sync_managed_properties():
+    live, seed = SERVER / "server.properties", SERVER_OVERRIDES / "server.properties"
+    if not (live.exists() and seed.exists()):
+        return
+    want = {}
+    for line in seed.read_text(encoding="utf-8").splitlines():
+        k, _, v = line.partition("=")
+        if k.strip() in MANAGED_PROPERTIES:
+            want[k.strip()] = v.strip()
+    lines, changed = live.read_text(encoding="utf-8").splitlines(), []
+    for i, line in enumerate(lines):
+        k, _, v = line.partition("=")
+        if k.strip() in want and v.strip() != want[k.strip()]:
+            changed.append(f"{k.strip()}: {v.strip()} -> {want[k.strip()]}")
+            lines[i] = f"{k.strip()}={want[k.strip()]}"
+    if changed:
+        live.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print("server: server.properties updated: " + "; ".join(changed))
+
+
 def cmd_server():
+    if server_running():
+        raise SystemExit("ERROR the server is running. Type `stop` in its window, wait for it to close, then run this again.")
     lock = load_lock()
     SERVER.mkdir(exist_ok=True)
     java = java_exe()
@@ -207,6 +253,7 @@ def cmd_server():
                 continue
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(p, dest)
+    sync_managed_properties()
     # Running the server means accepting the Minecraft EULA (https://aka.ms/MinecraftEULA) - see docs/HOSTING.md.
     (SERVER / "eula.txt").write_text("eula=true\n")
     jvm = SERVER / "user_jvm_args.txt"
