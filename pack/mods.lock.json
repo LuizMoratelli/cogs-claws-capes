@@ -393,6 +393,21 @@
       "client": "required",
       "server": "required"
     },
+    "dampened": {
+      "title": "Dampened",
+      "group": "undeclared_dependencies",
+      "project_id": "B2QvfvaH",
+      "version_id": "UchvGtkf",
+      "version_number": "1.0.2",
+      "published": "2025-07-27",
+      "file": "dampened-v1.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/B2QvfvaH/versions/UchvGtkf/dampened-v1.2.0.jar",
+      "sha1": "5c9b11c52b12185a8470341f8407644283bfec9d",
+      "sha512": "e7d6865ba6014451ddba1cd677199bc0b8565cf49d14d7c1e9175c58ed252c443ec015027a2e97ae661e21a4db4681850f83fa24a4badb9fdd0582a6440483ae",
+      "size": 123545,
+      "client": "required",
+      "server": "required"
+    },
     "embeddium": {
       "title": "Embeddium",
       "group": "performance",
@@ -513,6 +528,21 @@
       "client": "required",
       "server": "required"
     },
+    "ice-and-fire-dragons": {
+      "title": "Ice and Fire",
+      "group": "challenge",
+      "project_id": "LVnvHVBp",
+      "version_id": "EzN8KQYF",
+      "version_number": "2.1.13-1.20.1-beta-5",
+      "published": "2024-08-15",
+      "file": "iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "url": "https://cdn.modrinth.com/data/LVnvHVBp/versions/EzN8KQYF/iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "sha1": "7e828cbb046ca3d622e92c68f956bd1c0155dc6f",
+      "sha512": "9e3559efccfb898a1f96c16910c07d26bafa730603a335db04df5a1ef511bd2e60b6bbb788c12aa80b12c8ffd8228e7eddf840f90f356577bfd0e439e24eb4f1",
+      "size": 21854126,
+      "client": "required",
+      "server": "required"
+    },
     "immediatelyfast": {
       "title": "ImmediatelyFast",
       "group": "performance",
@@ -528,6 +558,21 @@
       "client": "required",
       "server": "unsupported"
     },
+    "into-the-omniverse": {
+      "title": "Into The Omniverse: AlienEvo AddonPack",
+      "group": "superheroes",
+      "project_id": "um30W0gE",
+      "version_id": "F0fN82xY",
+      "version_number": "1.0.6",
+      "published": "2026-02-14",
+      "file": "IntoTheOmniverse-v1.0.6.jar",
+      "url": "https://cdn.modrinth.com/data/um30W0gE/versions/F0fN82xY/IntoTheOmniverse-v1.0.6.jar",
+      "sha1": "ce2ebcbb10d7d3ab5c5cdc7f7808227b841f73a5",
+      "sha512": "c53ae837a658a0b23db54950dfb2cf77fda1bcf1ac69150ac432f91f9047d7d6200b25a3072574f616190aca4da30a7b51fbf1d3517f5ce53c74a8d61d19118e",
+      "size": 2773180,
+      "client": "required",
+      "server": "required"
+    },
     "iron-chests": {
       "title": "Iron Chests",
       "group": "foundation",
@@ -540,6 +585,36 @@
       "sha1": "4b2dd0f581e40f8bd6f6e63b2d84c06dfde2c4eb",
       "sha512": "5d41daa11bbc5c98c98faf6641993a47bce92c56204cec745686396e4f912b67abbc29f9fefcc5fd89422c37c3b34c191bfcc6479b28d7a07886cd279c0d6d99",
       "size": 311290,
+      "client": "required",
+      "server": "required"
+    },
+    "irons-lib": {
+      "title": "Iron's Lib",
+      "group": "undeclared_dependencies",
+      "project_id": "9nfaJPtX",
+      "version_id": "6HqXQkgC",
+      "version_number": "1.20.1-2.2.0",
+      "published": "2026-09-28",
+      "file": "irons_lib-1.20.1-2.2.0.jar",
+      "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/6HqXQkgC/irons_lib-1.20.1-2.2.0.jar",
+      "sha1": "8cad65f57a4bdcbbf3ea8a5eda9240810e3a55aa",
+      "sha512": "5d3ce588f692233672f5059e527fa093a3a3d40f2121a90101aa5c815c1677dc9d5eeca0528a010c0ad6d417b244943fc935bc093e66af72c9a6e1b0b674eeab",
+      "size": 490088,
+      "client": "required",
+      "server": "required"
+    },
+    "irons-spells-n-spellbooks": {
+      "title": "Iron's Spells 'n Spellbooks",
+      "group": "magic",
+      "project_id": "s4OWxYQQ",
+      "version_id": "hZaEegS9",
+      "version_number": "1.20.1-3.16.3",
+      "published": "2026-08-18",
+      "file": "irons_spellbooks-1.20.1-3.16.3.jar",
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/hZaEegS9/irons_spellbooks-1.20.1-3.16.3.jar",
+      "sha1": "726345aa215756bd30b7cf8c338c9ae6bbc59799",
+      "sha512": "a699631fa56568d39a30773b8fe96d7a49f1cd7f8e243340ce7ad91b09ccf49c9a6802a944f4bd04b2d88d9fc796a70add1d18d8f326bb2be238b02a8c8076da",
+      "size": 15570397,
       "client": "required",
       "server": "required"
     },
@@ -618,6 +693,36 @@
       "client": "required",
       "server": "required"
     },
+    "l_enders-cataclysm": {
+      "title": "L_Ender's Cataclysm",
+      "group": "challenge",
+      "project_id": "46KJle7n",
+      "version_id": "C3H0azzB",
+      "version_number": "3.31",
+      "published": "2026-06-14",
+      "file": "L_Enders_Cataclysm-3.31.jar",
+      "url": "https://cdn.modrinth.com/data/46KJle7n/versions/C3H0azzB/L_Enders_Cataclysm-3.31.jar",
+      "sha1": "4f1165cb39521292e826b471b4808bb89f0f4f3f",
+      "sha512": "0dccedd79e3e555f5a38075612d91aec23e1f6ca674e7637ea88c669095b44554385abb75826dfa5a0170585c6b3c3b6d9465bed049c0186d80f75d88f45c5e8",
+      "size": 73916104,
+      "client": "required",
+      "server": "required"
+    },
+    "lionfish-api": {
+      "title": "Lionfish-API",
+      "group": "dependency of l_enders-cataclysm",
+      "project_id": "FoVacERa",
+      "version_id": "CPftDBcY",
+      "version_number": "3.0",
+      "published": "2026-06-11",
+      "file": "lionfishapi-3.0.jar",
+      "url": "https://cdn.modrinth.com/data/FoVacERa/versions/CPftDBcY/lionfishapi-3.0.jar",
+      "sha1": "79d0404f87fa066480b18c844c1e0b1c5f5475f9",
+      "sha512": "a7cf6c9bf27a77b45efe434a166f9c99efdb6db14e5d88ce8417c6364aea9d250a9f43627e9e0ac162e106517fccf51cebb5035852c8449fb7fb299a083770c4",
+      "size": 101931,
+      "client": "required",
+      "server": "required"
+    },
     "lodestonelib": {
       "title": "Lodestone",
       "group": "dependency of gravestone-core",
@@ -692,6 +797,21 @@
       "size": 76237,
       "client": "required",
       "server": "unsupported"
+    },
+    "mowzies-mobs": {
+      "title": "Mowzie's Mobs",
+      "group": "challenge",
+      "project_id": "BFbX9xcm",
+      "version_id": "acYEfsJa",
+      "version_number": "1.8.2",
+      "published": "2026-04-02",
+      "file": "mowziesmobs-1.8.2.jar",
+      "url": "https://cdn.modrinth.com/data/BFbX9xcm/versions/acYEfsJa/mowziesmobs-1.8.2.jar",
+      "sha1": "25ffcd175cc03650e38e60d3cb7b3e038d9d3345",
+      "sha512": "c1c5f7b8cba4dbbe57f8eb7150bea94a72076ef4ae923adf7fe1147eef703e4fedc7914a12d51fb4152faccaad94c4053ce3ff21cca8905bf2da17de61db43b0",
+      "size": 36033850,
+      "client": "required",
+      "server": "required"
     },
     "omni-extras": {
       "title": "Omni Extras: An Alien Evo Addonpack",

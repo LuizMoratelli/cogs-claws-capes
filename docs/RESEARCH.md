@@ -101,3 +101,28 @@ so `hero_gating.js` no longer keeps its own list. Colour variants (`*_red`, `*_b
 excluded as cosmetic/food. Boot: `rewrote 319 tailoring, 56 -> mechanical crafting, 27 -> heated mixing, 10 skipped,
 0 failed`, control `alienevo:prototype_omnitrix: create:mechanical_crafting OK`
 ([boot-test-2026-10-11-b.txt](references/data/boot-test-2026-10-11-b.txt)).
+
+## 6. Challenge + magic mods (pack 0.3.0, 2026-10-11)
+
+Added: `l_enders-cataclysm` 3.31, `mowzies-mobs` 1.8.2, `ice-and-fire-dragons` 2.1.13-1.20.1-beta-5 (the only 1.20.1
+build is a beta), `irons-spells-n-spellbooks` 1.20.1-3.16.3, `into-the-omniverse` 1.0.6. Bosses of Mass Destruction has
+no Forge 1.20.1 build; Twilight Forest and Born in Chaos are not on Modrinth under the slugs tried.
+
+Boot findings, each from the server log, with the fix:
+
+| Finding | Cause | Fix |
+|---|---|---|
+| FATAL `irons_spellbooks requires irons_lib 1.20.1-2..3` | undeclared dependency | added `irons-lib` |
+| `Couldn't parse element loot_tables:irons_spellbooks:chests/catacombs/crypt_loot` ("Missing name") | nested `minecraft:loot_table` entry uses the 1.21 key `value` | `overrides/kubejs/data/...` copy with `name` |
+| `... chests/citadel/citadel_tomes` ("Unknown type minecraft:set_written_book_pages") | 1.20.5+ loot function | rewritten as `minecraft:set_nbt` written-book NBT, same translated pages |
+| `Parsing error loading power fsang_hero:dampened` (`Unknown mob_effect dampened:genetic`) | FSang's dampening needs the Dampened library (not declared) | added `dampened`; error gone |
+| `Couldn't load tag aeo:oxygen ... ad_astra:oxygen` | Into the Omniverse's optional Ad Astra compat | none needed |
+
+Remaining ERROR lines after the fixes (340 unique signatures, all present before these mods were added), classified:
+CoreWithStuff loot tables and recipes for moon/chromatix blocks it never registers (~150, harmless); Palladium
+`packData is null` once per non-addonpack mod it skips (76, harmless); FSang/Satsu powers and recipes for items those
+packs no longer register (20 powers, 10 recipes: leftover data, nothing to load); spawn weight 0 (7), one Curios
+`necklace` slot, one client-class access on the server. None stop the server or affect gameplay that exists.
+Method: `grep "/ERROR]" boot.log`, normalised and diffed against the previous boot's set (`comm -13`).
+Gating with Iron's Spells' workstations: `EXTRA_GATED` in `tools/scan_hero_recipes.py`.
+Evidence: [boot-test-2026-10-11-c.txt](references/data/boot-test-2026-10-11-c.txt).

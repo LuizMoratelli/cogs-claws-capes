@@ -6,7 +6,7 @@ You need a paid Minecraft Java account and the pack file `cogs-claws-capes-<vers
 
 1. Install **Prism Launcher**: https://prismlauncher.org (free, open source). It downloads the right Java by itself.
 2. Log in: **Accounts -> Manage Accounts -> Add Microsoft**.
-3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 71 mods.
+3. **Add Instance -> Import** -> pick the `.mrpack` file -> OK. Prism downloads Forge and all 79 mods.
 4. Right-click the instance -> **Edit -> Settings -> Memory**: set **Maximum memory allocation to 6144-8192 MiB**
    (6-8 GB). Less than 6 GB will stutter.
 5. **Launch.** The first start takes a few minutes.
@@ -33,6 +33,10 @@ Press **R** on any item to see how it is made and **U** to see what uses it (JEI
    its workbench are Mechanical Crafter recipes that need a Hero Core.
 8. **Powers and gadgets** (serums, DNA, Iron Man add-ons, hero workstations) are made in **Mechanical Crafters** or a
    **heated Mixer**, and each needs a Hero Core.
+
+9. **Magic (Iron's Spells):** spell books and scrolls drop from loot; the Inscription Table, Scroll Forge and Arcane
+   Anvil are Mechanical Crafter recipes with a Hero Core.
+10. **Bosses:** Cataclysm, Mowzie's Mobs and Ice and Fire dragons are tuned for strong players. Go in suited up.
 
 Plan for a factory that makes Hero Cores automatically. That is where the whole group's Create, dinosaur and Nether
 work comes together.

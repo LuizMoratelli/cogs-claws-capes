@@ -1,6 +1,6 @@
 {
   "name": "Cogs, Claws & Capes",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
   "minecraft": "1.20.1",
   "loader": "forge",
@@ -66,15 +66,26 @@
       "satsu-iron-man-addon",
       "powerborne-heroes",
       "alienevo",
-      "omni-extras"
+      "omni-extras",
+      "into-the-omniverse"
     ],
     "undeclared_dependencies": [
       "kotlin-for-forge",
       "corewithstuff",
-      "gravestone-core"
+      "gravestone-core",
+      "irons-lib",
+      "dampened"
+    ],
+    "challenge": [
+      "l_enders-cataclysm",
+      "mowzies-mobs",
+      "ice-and-fire-dragons"
+    ],
+    "magic": [
+      "irons-spells-n-spellbooks"
     ]
   },
   "pins": {},
   "hero_namespaces_note": "Mods whose crafting recipes are rewritten into Create-gated recipes live in overrides/kubejs/server_scripts/hero_gating.js (HERO_MODS).",
-  "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test."
+  "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test. irons_lib 1.20.1-2.x (irons-spells-n-spellbooks). dampened (FSang's power-dampening blocks/effect dampened:genetic; optional per Modrinth, but its power fails to parse without it)."
 }

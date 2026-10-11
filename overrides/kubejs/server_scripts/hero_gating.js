@@ -116,6 +116,7 @@ ServerEvents.loaded(event => {
   check('cogsclawscapes:hero_core', 'create:sequenced_assembly')
   check('satsu_iron_man_addon:additamens/emp', 'create:mechanical_crafting')
   check('alienevo:prototype_omnitrix', 'create:mechanical_crafting')
+  check('irons_spellbooks:inscription_table', 'create:mechanical_crafting')
   // A suit must now ask for a Hero Core; a plain Palladium part must not (control in both directions).
   const needsCore = id => {
     const opt = rm.byKey(id)

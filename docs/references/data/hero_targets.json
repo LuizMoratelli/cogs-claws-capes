@@ -351,11 +351,6 @@
    "output": "alienevo:prototype_omnitrix"
   },
   {
-   "id": "alienevo:upgrade_crystal",
-   "type": "minecraft:crafting_shaped",
-   "output": "alienevo:upgrade_crystal"
-  },
-  {
    "id": "fsang:ai_edith",
    "type": "minecraft:crafting_shapeless",
    "output": "fsang:ai_edith"
@@ -639,6 +634,21 @@
    "id": "gravecore:sonic_gun",
    "type": "minecraft:crafting_shaped",
    "output": "grave.core:sonic_gun"
+  },
+  {
+   "id": "irons_spellbooks:arcane_anvil",
+   "type": "minecraft:crafting_shaped",
+   "output": "irons_spellbooks:arcane_anvil"
+  },
+  {
+   "id": "irons_spellbooks:inscription_table",
+   "type": "minecraft:crafting_shaped",
+   "output": "irons_spellbooks:inscription_table"
+  },
+  {
+   "id": "irons_spellbooks:scroll_forge",
+   "type": "minecraft:crafting_shaped",
+   "output": "irons_spellbooks:scroll_forge"
   },
   {
    "id": "pantheonsent:lunar_stone",

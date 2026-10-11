@@ -7,7 +7,7 @@ A Minecraft modpack for a private group: **Create** engineering (cogs), **revive
 |---|---|
 | Minecraft | **1.20.1** |
 | Loader | **Forge 47.4.10** (Java 17) |
-| Mods | 71 (55 chosen + 16 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
+| Mods | 79 (62 chosen + 17 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
 | Client RAM | 6-8 GB allocated |
 | Server RAM | 8 GB (`server/user_jvm_args.txt`) |
 
@@ -23,7 +23,10 @@ hero pack) and Fossils & Archeology Revival stop at 1.20.1, and Create's largest
   Alex's Mobs.
 - **Superheroes:** Palladium + FSang18's Heroes (hundreds of Marvel/DC suits and powers), Satsu's Iron Man (every Mark,
   suit-up animations), Powerborne Heroes, and **Ben 10**: Alien Evolution (the Omnitrix, aliens unlocked by DNA codes
-  found through archaeology) + Omni Extras (more aliens).
+  found through archaeology) + Omni Extras + Into the Omniverse (more aliens).
+- **Something to fight:** L_Ender's Cataclysm (huge bosses), Mowzie's Mobs (smart mini-bosses), Ice and Fire (dragons;
+  its 1.20.1 build is a beta).
+- **Magic:** Iron's Spells 'n Spellbooks. Its three spellcasting workstations need a Hero Core too.
 - **Foundation:** JEI, Jade, Xaero's maps, Sophisticated Backpacks, Waystones, Farmer's Delight, Supplementaries,
   Comforts, Corpse, Carry On, Iron Chests, Tom's Storage, Open Parties and Claims, YUNG's structures, Biomes O' Plenty,
   Terralith, KubeJS, Simple Backups, plus performance mods (ModernFix, FerriteCore, Embeddium, Entity Culling, ImmediatelyFast).
@@ -37,7 +40,7 @@ The gating is [overrides/kubejs/server_scripts/hero_gating.js](overrides/kubejs/
    That takes brass-tier Create, fossil hunting and a Nether trip.
 2. The **Tailoring Bench**, where every suit is made, needs a **Mechanical Crafter** and a Hero Core.
 3. **Every suit** (319 tailoring recipes) costs one more Hero Core.
-4. **Every power, serum and gadget** (83 recipes: Compound V, Extremis, spider serum, Iron Man add-ons, the
+4. **Every power, serum and gadget** (85 recipes, plus Iron's Spells' Inscription Table, Scroll Forge and Arcane Anvil: Compound V, Extremis, spider serum, Iron Man add-ons, the
    **Omnitrix** and its workbench, hero workstations...) leaves the crafting table. Shaped recipes become Create Mechanical Crafting with an extra Hero Core;
    shapeless recipes become heated Create Mixing with a Hero Core.
    Cosmetics (capes, scarves, speed trails, colour variants) and basic parts stay cheap.
@@ -62,3 +65,9 @@ python tools/build.py mrpack   # -> dist/cogs-claws-capes-<version>.mrpack  (giv
 python tools/build.py server   # -> server/  (Forge + server-side mods + configs + start.bat)
 python tools/scan_hero_recipes.py   # after a hero-mod update: regenerate the gating targets
 ```
+
+## Fixes shipped with the pack
+
+- `overrides/kubejs/data/`: two Iron's Spells loot tables that fail on 1.20.1 (crypt and citadel chests would be empty).
+  See [its README](overrides/kubejs/data/README.md).
+- Dependencies the mod pages do not declare, found by booting the server: `pack/pack.json` -> `undeclared_dependencies`.
