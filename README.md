@@ -50,6 +50,7 @@ server prints a self-check on every boot (`logs/kubejs/server.log`, lines `[hero
 
 ## Docs
 
+- **[docs/ROADMAP.md](docs/ROADMAP.md):** checklist from the first tree to the first hero / Omnitrix.
 - **[docs/PLAYING.md](docs/PLAYING.md):** install the pack and join the server (for every player).
 - **[docs/HOSTING.md](docs/HOSTING.md):** run the server safely: home PC + playit.gg tunnel (no port forwarding, no
   Hamachi-style VPN), or a paid host.
