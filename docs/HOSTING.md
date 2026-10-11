@@ -153,3 +153,19 @@ rebuilds from the repo with `build.py server`, except the world, which is what t
   same; builds, inventories and XP start over. Whitelist, ops, passwords (`config/offlineauth/auth.json`) and the
   TrueUUID name registry live outside the world folder and are kept.
 - Never delete a `world_old_*` folder until you are sure you will not want it back.
+
+## Lag: what it is and what helps (measured 2026-10-11)
+
+- **Server stutter = new terrain.** The log's `Can't keep up! ... ticks behind` warnings (3 of them, 2-10 s, all
+  within two minutes of creating the world) come from generating new chunks: Terralith + Biomes O' Plenty + YUNG's
+  structures + the dinosaur and boss mods make worldgen heavy. The PC itself was idle (server ~40% of one core, PC 9%).
+  **Fix: pre-generate** while nobody is playing, in the server console: `chunky radius 3000` then `chunky start`
+  (`chunky pause` / `chunky continue`; progress is printed). Already-generated land costs almost nothing.
+- **Memory:** `user_jvm_args.txt` = 8 GB + Aikar's G1 flags (written by `build.py`; it used to be left on JVM defaults
+  because a commented `-Xmx4G` in Forge's template fooled the check - fixed).
+- **Network (friends only; on this PC `localhost` is 0.3 ms):** the free playit tunnel answered in ~195 ms from here,
+  and its IP geolocates to Oregon, US (IP geolocation is approximate). A friend's packets go friend -> relay -> this PC,
+  so expect a steady few hundred ms. Same house: use this PC's LAN IP instead. Otherwise check playit's paid plan for
+  a region closer to Brazil.
+- **Check live:** `spark tps` (server ticks per second, 20 = perfect) and `spark profiler start` / `spark profiler stop`
+  (gives a link that shows what is slow).

@@ -218,6 +218,25 @@ def sync_managed_properties():
         print("server: server.properties updated: " + "; ".join(changed))
 
 
+def ensure_jvm_args():
+    # Memory + GC flags. Only an UNCOMMENTED -Xmx line counts as "already set": Forge's template mentions -Xmx4G in a
+    # comment, which an earlier substring check mistook for a real setting (the server ran on JVM defaults).
+    jvm = SERVER / "user_jvm_args.txt"
+    current = jvm.read_text(encoding="utf-8") if jvm.exists() else ""
+    if not any(l.strip().startswith("-Xmx") for l in current.splitlines()):
+        jvm.write_text(
+            "# Cogs, Claws & Capes - written by tools/build.py (edit freely; kept once an -Xmx line exists).\n"
+            "-Xms8G\n-Xmx8G\n"
+            # Aikar's G1 flags, the standard tuning for Minecraft servers (fewer, shorter GC pauses).
+            "-XX:+UseG1GC\n-XX:+ParallelRefProcEnabled\n-XX:MaxGCPauseMillis=200\n-XX:+UnlockExperimentalVMOptions\n"
+            "-XX:+DisableExplicitGC\n-XX:+AlwaysPreTouch\n-XX:G1NewSizePercent=30\n-XX:G1MaxNewSizePercent=40\n"
+            "-XX:G1HeapRegionSize=8M\n-XX:G1ReservePercent=20\n-XX:G1HeapWastePercent=5\n-XX:G1MixedGCCountTarget=4\n"
+            "-XX:InitiatingHeapOccupancyPercent=15\n-XX:G1MixedGCLiveThresholdPercent=90\n"
+            "-XX:G1RSetUpdatingPauseTimePercent=5\n-XX:SurvivorRatio=32\n-XX:+PerfDisableSharedMem\n"
+            "-XX:MaxTenuringThreshold=1\n", encoding="utf-8")
+        print("server: user_jvm_args.txt set to 8 GB + G1 tuning")
+
+
 def cmd_server():
     if server_running():
         raise SystemExit("ERROR the server is running. Type `stop` in its window, wait for it to close, then run this again.")
@@ -263,9 +282,7 @@ def cmd_server():
     sync_managed_properties()
     # Running the server means accepting the Minecraft EULA (https://aka.ms/MinecraftEULA) - see docs/HOSTING.md.
     (SERVER / "eula.txt").write_text("eula=true\n")
-    jvm = SERVER / "user_jvm_args.txt"
-    if not jvm.exists() or "Xmx" not in jvm.read_text():
-        jvm.write_text("-Xms6G\n-Xmx8G\n")
+    ensure_jvm_args()
     args = "win_args.txt" if os.name == "nt" else "unix_args.txt"
     (SERVER / "start.bat").write_text(
         "@echo off\r\ncd /d \"%~dp0\"\r\n"
