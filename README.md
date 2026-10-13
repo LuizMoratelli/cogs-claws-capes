@@ -7,7 +7,7 @@ A Minecraft modpack for a private group: **Create** engineering (cogs), **revive
 |---|---|
 | Minecraft | **1.20.1** |
 | Loader | **Forge 47.4.10** (Java 17) |
-| Mods | 81 (64 chosen + 17 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
+| Mods | 170 (136 chosen + 34 dependencies), all from Modrinth, pinned in [pack/mods.lock.json](pack/mods.lock.json) |
 | Client RAM | 6-8 GB allocated |
 | Server RAM | 8 GB (`server/user_jvm_args.txt`) |
 
@@ -27,6 +27,11 @@ hero pack) and Fossils & Archeology Revival stop at 1.20.1, and Create's largest
 - **Something to fight:** L_Ender's Cataclysm (huge bosses), Mowzie's Mobs (smart mini-bosses), Ice and Fire (dragons;
   its 1.20.1 build is a beta).
 - **Magic:** Iron's Spells 'n Spellbooks. Its three spellcasting workstations need a Hero Core too.
+- **0.5.0 additions:** more Create addons (Copycats+, Interiors, Slice & Dice, Teleporters, Power Loader, Ore Excavation,
+  Mechanical Extruder, Stuff 'n Additions, Railways Navigator, Structures Arise, airships via Valkyrien Skies + Eureka +
+  Clockwork...), exploration (grappling hooks, paragliders, ziplines, compasses), CC: Tweaked, Productive/Buzzier Bees,
+  Macaw's + furniture + Chipped/Rechiseled/Framed Blocks, Lootr, Torchmaster, Aquaculture, Naturalist, Storage Drawers,
+  Simply Swords, Better Combat, and quality-of-life/visual mods. Full list: `pack/pack.json`.
 - **Foundation:** JEI, Jade, Xaero's maps, Sophisticated Backpacks, Waystones, Farmer's Delight, Supplementaries,
   Comforts, Corpse, Carry On, Iron Chests, Tom's Storage, Open Parties and Claims, YUNG's structures, Biomes O' Plenty,
   Terralith, KubeJS, Simple Backups, plus performance mods (ModernFix, FerriteCore, Embeddium, Entity Culling, ImmediatelyFast).

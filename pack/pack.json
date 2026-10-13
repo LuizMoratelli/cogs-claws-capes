@@ -1,6 +1,6 @@
 {
   "name": "Cogs, Claws & Capes",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "summary": "Create engineering, revived dinosaurs and hard-earned superpowers on Forge 1.20.1.",
   "minecraft": "1.20.1",
   "loader": "forge",
@@ -87,10 +87,102 @@
     "server_access": [
       "trueuuid",
       "offlineauth"
+    ],
+    "create_addons_2": [
+      "copycats",
+      "interiors",
+      "slice-and-dice",
+      "create-teleporters",
+      "create-encased",
+      "create-confectionery",
+      "create-liquid-fuel",
+      "create-power-loader",
+      "create-ore-excavation",
+      "create-mechanical-extruder",
+      "create-stuff-additions",
+      "create-railways-navigator",
+      "create-structures-arise",
+      "valkyrien-skies",
+      "eureka",
+      "create-clockwork",
+      "rechiseled-create"
+    ],
+    "exploration": [
+      "grappling-hook-mod",
+      "paragliders",
+      "better-climbing",
+      "ziplines-rezipped",
+      "explorers-compass",
+      "natures-compass"
+    ],
+    "industry_bees": [
+      "cc-tweaked",
+      "productivebees",
+      "buzzier-bees"
+    ],
+    "blocks_decor": [
+      "macaws-doors",
+      "macaws-windows",
+      "macaws-roofs",
+      "macaws-bridges",
+      "macaws-lights-and-lamps",
+      "macaws-fences-and-walls",
+      "macaws-furniture",
+      "macaws-trapdoors",
+      "handcrafted",
+      "another-furniture",
+      "chipped",
+      "rechiseled",
+      "framedblocks"
+    ],
+    "gameplay": [
+      "lootr",
+      "torchmaster",
+      "better-archeology",
+      "aquaculture",
+      "naturalist",
+      "storagedrawers",
+      "more-mob-variants",
+      "etched",
+      "immersive-paintings",
+      "nethers-delight",
+      "corn-delight"
+    ],
+    "weapons": [
+      "simply-swords",
+      "better-combat"
+    ],
+    "quality_of_life": [
+      "attributefix",
+      "polymorph",
+      "controlling",
+      "neruina",
+      "crafting-tweaks",
+      "searchables",
+      "just-enough-resources-jer",
+      "enchantment-descriptions",
+      "lmd"
+    ],
+    "visual": [
+      "shoulder-surfing-reloaded",
+      "freecam",
+      "ok-zoomer",
+      "cmdcam",
+      "sound-physics-remastered",
+      "3dskinlayers",
+      "entitytexturefeatures",
+      "entity-model-features",
+      "not-enough-animations",
+      "better-animations-collection",
+      "dynamic-lights"
     ]
   },
-  "pins": {},
+  "pins": {
+    "jei": "15.62.0.219"
+  },
   "hero_namespaces_note": "Mods whose crafting recipes are rewritten into Create-gated recipes live in overrides/kubejs/server_scripts/hero_gating.js (HERO_MODS).",
   "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test. irons_lib 1.20.1-2.x (irons-spells-n-spellbooks). dampened (FSang's power-dampening blocks/effect dampened:genetic; optional per Modrinth, but its power fails to parse without it).",
-  "server_access_note": "online-mode=false so offline (non-paid) accounts can join. TrueUUID (client+server) verifies paid accounts with Mojang and blocks offline reuse of verified names; OfflineAuth (server) makes offline accounts /register + /login."
+  "server_access_note": "online-mode=false so offline (non-paid) accounts can join. TrueUUID (client+server) verifies paid accounts with Mojang and blocks offline reuse of verified names; OfflineAuth (server) makes offline accounts /register + /login.",
+  "pins_note": "jei pinned past the newest 'release' build: Polymorph needs JEI >= 15.57.0.207. complicated-bees dropped: needs Biomes O' Plenty 19+, and changing BOP would change new terrain in the existing world.",
+  "dropped_note": "Dropped at the 0.5.0 boot test: complicated-bees (needs BOP 19+), create-design-n-decor + extended-cogwheels (built for Create 0.5.1; reference BlockStressDefaults, removed in Create 6)."
 }

@@ -6,3 +6,4 @@ Data fixes shipped as a KubeJS datapack (files here override the same path insid
 - `irons_spellbooks/loot_tables/chests/citadel/citadel_tomes.json` - uses `minecraft:set_written_book_pages`, which only
   exists from 1.20.5. Rewritten as `minecraft:set_nbt` with the same translated pages (title "Citadel Tome").
 Re-check both after updating Iron's Spells: delete the file here if the mod's own copy loads without the error.
+- `naturalist/loot_tables/entities/tortoise.json` - Naturalist 5.0pre2 drops `minecraft:turtle_scute`, the 1.20.5+ name; in 1.20.1 the item is `minecraft:scute`. Without this the tortoise loot table fails to load ("Expected name to be an item").

@@ -166,3 +166,18 @@ Animations, Better Animations Collection, Dynamic Lights, Neruina, AttributeFix,
 set, Nether's/Corn Delight. **CurseForge-only (cannot go in a .mrpack):** FTB Quests/Chunks/Teams, Cosmetic Armor
 Reworked, Create Chunkloading, Create Recycle Everything. No Forge 1.20.1: Callable Horses, Fresh Animations (resource
 pack), Bad Mobs, Fast Leaf Decay.
+
+## 9. Pack 0.5.0 - the approved batch (2026-10-13)
+
+75 mods approved by the user (Create addons, exploration, industry/bees, blocks/decor, gameplay, weapons, QoL, visual),
+170 with dependencies. Boot-tested on `server-test/` (port 25566) so the live server kept running. Findings:
+
+| Boot | Finding | Fix |
+|---|---|---|
+| 1 | `complicated_bees only supports biomesoplenty 19 or above` | dropped Complicated Bees: moving BOP 18 -> 19 could change new terrain in the existing world |
+| 1 | `polymorph only supports jei 15.57.0.207 or above` (newest JEI *release* is 15.56) | `pins.jei = 15.62.0.219` (beta channel; JEI only affects recipe screens) |
+| 2 | Create and 9 addons "failed to load"; root: `NoClassDefFoundError com/simibubi/create/content/kinetics/BlockStressDefaults` from `design_decor` and `extendedgears` | dropped Create: Design n' Decor + Extended Cogwheels: built for Create 0.5.1 (the class is gone in Create 6); neither has a Create 6 build. Method: grep every jar for the missing class path |
+| 3 | boots (`Done 10.4s`); new ERROR types vs 0.4: More Mob Variants skips F&A variants with no weight (harmless), a Valkyrien Skies interface-mixin notice (non-fatal), two client classes touched while loading (server still starts), and `loot_tables:naturalist:entities/tortoise` "Expected name to be an item ... minecraft:turtle_scute" | shipped `overrides/kubejs/data/naturalist/loot_tables/entities/tortoise.json` with the 1.20.1 name `minecraft:scute`; boot 4: error gone |
+
+Hero gating unchanged: all 9 controls OK, 0 KubeJS errors. **Not tested yet:** a client launch with 170 mods (the
+visual/client-only mods are skipped on the server), and the new mods' default keybinds against the hero layout.
