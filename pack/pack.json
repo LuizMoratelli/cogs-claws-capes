@@ -133,7 +133,8 @@
       "another-furniture",
       "chipped",
       "rechiseled",
-      "framedblocks"
+      "framedblocks",
+      "amendments"
     ],
     "gameplay": [
       "lootr",
@@ -170,8 +171,6 @@
       "cmdcam",
       "sound-physics-remastered",
       "3dskinlayers",
-      "entitytexturefeatures",
-      "entity-model-features",
       "not-enough-animations",
       "better-animations-collection",
       "dynamic-lights"
@@ -184,5 +183,5 @@
   "undeclared_dependencies_note": "Required at boot but missing from the Modrinth pages: kotlinforforge (flightlib, via create-jetpack), corewithstuff + gravecore (satsu-iron-man-addon). Found by the server boot test. irons_lib 1.20.1-2.x (irons-spells-n-spellbooks). dampened (FSang's power-dampening blocks/effect dampened:genetic; optional per Modrinth, but its power fails to parse without it).",
   "server_access_note": "online-mode=false so offline (non-paid) accounts can join. TrueUUID (client+server) verifies paid accounts with Mojang and blocks offline reuse of verified names; OfflineAuth (server) makes offline accounts /register + /login.",
   "pins_note": "jei pinned past the newest 'release' build: Polymorph needs JEI >= 15.57.0.207. complicated-bees dropped: needs Biomes O' Plenty 19+, and changing BOP would change new terrain in the existing world.",
-  "dropped_note": "Dropped at the 0.5.0 boot test: complicated-bees (needs BOP 19+), create-design-n-decor + extended-cogwheels (built for Create 0.5.1; reference BlockStressDefaults, removed in Create 6)."
+  "dropped_note": "Dropped at the 0.5.0 boot test: complicated-bees (needs BOP 19+), create-design-n-decor + extended-cogwheels (built for Create 0.5.1; reference BlockStressDefaults, removed in Create 6). Client test: entitytexturefeatures + entity-model-features removed (ETF's mixin cannot find EMF's EMFAnimationEntityContext = version mismatch; player head rendered as a blank cube; both only serve model resource packs, none of which exist for Forge 1.20.1 here)."
 }
