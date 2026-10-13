@@ -169,3 +169,13 @@ rebuilds from the repo with `build.py server`, except the world, which is what t
   a region closer to Brazil.
 - **Check live:** `spark tps` (server ticks per second, 20 = perfect) and `spark profiler start` / `spark profiler stop`
   (gives a link that shows what is slow).
+
+## Going back to 0.4.1 (made 2026-10-13, before the 0.5.0 update)
+
+- World as it was: `C:\Backup\cogs-claws-capes\world_2026-10-13_13-40-28.zip`
+- Server setup as it was (75 mods, configs, scripts, settings, whitelist):
+  `D:\Projects\cogs-claws-capes\backups\server-0.4.1-files_2026-10-13.zip`
+- Steps: stop the server; rename `server\mods`, `server\config`, `server\kubejs` (and `server\world`, if you also want
+  the old world) to `*_050`; unzip the files zip into `server\` (and the world zip, which contains `world\`); start.
+  Players go back to the v0.4.1 release. Nothing was removed between 0.4.1 and 0.5.0, so the 0.4.1 world opens in 0.5.0
+  too; going back DOWN loses the blocks and items of the mods 0.5.0 added.

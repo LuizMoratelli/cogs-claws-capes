@@ -16,7 +16,11 @@ da pagina de releases em vez do normal. Tudo de heroi fica na mao esquerda:
 | **J** | Iron Man: modular |
 | **O** | abrir mochila |
 | **I** | menu Curios (acessorios) |
-| teclado numerico **+ - \* 0 1 2 3 4** | waypoint novo, config. do minimapa, ampliar mapa, jetpack on/off, upgrades da mochila 1 e 2, terminal Tom's, painel CoreWithStuff |
+| **N** | zoom (Ok Zoomer) |
+| **Ç** | trocar o ombro da camera (Shoulder Surfing) |
+| teclado numerico **6 7 8 9 / .** | jetpack on/off, upgrades da mochila 1 e 2, terminal Tom's, painel CoreWithStuff, waypoint novo |
+| teclado numerico **0-5** | Jade (info dos blocos), como vem no mod |
+| (sem tecla) | camera de cinema CMDCam - ative em Controles quando for gravar |
 
 Teclas que continuam repetidas (Armadura do Cataclysm, aljava, livro de feiticos, montar dragao) so funcionam
 segurando ou vestindo o item delas, entao nao atrapalham os poderes.

@@ -8,3 +8,4 @@ __pycache__/
 server-test/
 tools/jar-cache/
 tools/forge-client/
+backups/
