@@ -146,3 +146,23 @@ because TrueUUID keeps paid accounts verified (real UUID + skin) and denies offl
 - Not tested here: real joins (needs two clients). First join by the owner should show the green "verified" badge.
 - Prism Launcher's official build only allows offline accounts after adding a Microsoft account that owns Minecraft
   (community sources, no official statement found); forks such as Freesm Launcher remove that.
+
+## 8. MrBeardstone's Create: Perfect World 2 (studied 2026-10-13, nothing installed yet)
+
+**Data:** `docs/references/data/beardstone-perfect-world-2-v0.5-modlist.txt` (148 mod names) and `...-manifest.json`
+(CurseForge project/file ids; Forge 47.3.11, MC 1.20.1).
+**How:** CurseForge's website API needs no key for these two calls:
+`GET https://www.curseforge.com/api/v1/mods/1042227/files?pageIndex=0&pageSize=5&sort=dateCreated&sortDescending=true`
+(newest file: 5853392 = v0.5) then `GET .../mods/1042227/files/5853392/download` -> the pack zip, whose `modlist.html`
+has every mod name and `manifest.json` every project id. (ModDex / ModPackIndex only show the 13 "primary" mods;
+ModPackIndex returns 403 to scripts.)
+**Availability for us** (Modrinth, Forge 1.20.1, checked the same day): on Modrinth - Create Slice & Dice
+(`slice-and-dice`), Extended Cogwheels, Teleporters, Power Loader, Stuff & Additions, Confectionery, Design n' Decor,
+Liquid Fuel (server only), Encased, Rechiseled: Create, Copycats+, Interiors (`interiors`), Aquaculture 2,
+Naturalist, Lootr, Explorer's/Nature's Compass, Storage Drawers, Torchmaster, Better Archeology, Etched, Immersive
+Paintings, More Mob Variants, Polymorph, Crafting Tweaks, Controlling, Searchables, JER, Enchantment Descriptions,
+Shoulder Surfing, Freecam, Ok Zoomer, Sound Physics, 3D Skin Layers (`3dskinlayers`), ETF, EMF, Not Enough
+Animations, Better Animations Collection, Dynamic Lights, Neruina, AttributeFix, Let Me Despawn (`lmd`), the Macaw's
+set, Nether's/Corn Delight. **CurseForge-only (cannot go in a .mrpack):** FTB Quests/Chunks/Teams, Cosmetic Armor
+Reworked, Create Chunkloading, Create Recycle Everything. No Forge 1.20.1: Callable Horses, Fresh Animations (resource
+pack), Bad Mobs, Fast Leaf Decay.
