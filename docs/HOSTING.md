@@ -179,3 +179,11 @@ rebuilds from the repo with `build.py server`, except the world, which is what t
   the old world) to `*_050`; unzip the files zip into `server\` (and the world zip, which contains `world\`); start.
   Players go back to the v0.4.1 release. Nothing was removed between 0.4.1 and 0.5.0, so the 0.4.1 world opens in 0.5.0
   too; going back DOWN loses the blocks and items of the mods 0.5.0 added.
+
+## Windmill boost (user choice "A + B", 2026-10-14)
+
+Create's windmills were weak (default: 8 sails per RPM, 512 SU per RPM, so 32 sails = 4 RPM = 2,048 SU). Set in
+`server/world/serverconfig/create-server.toml` (live world; backup `.bak-2026-10-14` next to it) and in
+`server-overrides/defaultconfigs/create-server.toml` (seeds a new world): `windmillSailsPerRPM = 4` and
+`windmill_bearing = 1024.0`. Result: 32 sails = 8 RPM = 8,192 SU; 64 sails reach the 16 RPM cap = 16,384 SU.
+Server-side config: clients need no update; takes effect on the next server start.
