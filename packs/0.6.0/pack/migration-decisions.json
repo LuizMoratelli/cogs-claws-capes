@@ -1,0 +1,560 @@
+{
+  "direct": {
+    "jei": {
+      "status": "retained",
+      "target": "jei"
+    },
+    "jade": {
+      "status": "retained",
+      "target": "jade"
+    },
+    "appleskin": {
+      "status": "retained",
+      "target": "appleskin"
+    },
+    "mouse-tweaks": {
+      "status": "retained",
+      "target": "mouse-tweaks"
+    },
+    "clumps": {
+      "status": "retained",
+      "target": "clumps"
+    },
+    "xaeros-minimap": {
+      "status": "retained",
+      "target": "xaeros-minimap"
+    },
+    "xaeros-world-map": {
+      "status": "retained",
+      "target": "xaeros-world-map"
+    },
+    "sophisticated-backpacks": {
+      "status": "retained",
+      "target": "sophisticated-backpacks"
+    },
+    "waystones": {
+      "status": "retained",
+      "target": "waystones"
+    },
+    "farmers-delight": {
+      "status": "retained",
+      "target": "farmers-delight"
+    },
+    "supplementaries": {
+      "status": "retained",
+      "target": "supplementaries"
+    },
+    "comforts": {
+      "status": "retained",
+      "target": "comforts"
+    },
+    "corpse": {
+      "status": "retained",
+      "target": "corpse"
+    },
+    "carry-on": {
+      "status": "retained",
+      "target": "carry-on"
+    },
+    "iron-chests": {
+      "status": "replaced",
+      "target": "upgraded-iron-chests"
+    },
+    "toms-storage": {
+      "status": "retained",
+      "target": "toms-storage"
+    },
+    "open-parties-and-claims": {
+      "status": "retained",
+      "target": "open-parties-and-claims"
+    },
+    "chunky": {
+      "status": "retained",
+      "target": "chunky"
+    },
+    "spark": {
+      "status": "retained",
+      "target": "spark"
+    },
+    "yungs-better-dungeons": {
+      "status": "retained",
+      "target": "yungs-better-dungeons"
+    },
+    "yungs-better-mineshafts": {
+      "status": "retained",
+      "target": "yungs-better-mineshafts"
+    },
+    "yungs-better-strongholds": {
+      "status": "retained",
+      "target": "yungs-better-strongholds"
+    },
+    "biomes-o-plenty": {
+      "status": "retained",
+      "target": "biomes-o-plenty"
+    },
+    "terralith": {
+      "status": "retained",
+      "target": "terralith"
+    },
+    "kubejs": {
+      "status": "retained",
+      "target": "kubejs"
+    },
+    "kubejs-create": {
+      "status": "retained",
+      "target": "kubejs-create"
+    },
+    "simple-backups": {
+      "status": "retained",
+      "target": "simple-backups"
+    },
+    "modernfix": {
+      "status": "retained",
+      "target": "modernfix"
+    },
+    "ferrite-core": {
+      "status": "retained",
+      "target": "ferrite-core"
+    },
+    "embeddium": {
+      "status": "replaced",
+      "target": "sodium"
+    },
+    "entityculling": {
+      "status": "retained",
+      "target": "entityculling"
+    },
+    "immediatelyfast": {
+      "status": "retained",
+      "target": "immediatelyfast"
+    },
+    "create": {
+      "status": "retained",
+      "target": "create"
+    },
+    "create-steam-n-rails": {
+      "status": "replaced",
+      "target": "create-steam-n-rails-1.21.1"
+    },
+    "createaddition": {
+      "status": "retained",
+      "target": "createaddition"
+    },
+    "create-enchantment-industry": {
+      "status": "retained",
+      "target": "create-enchantment-industry"
+    },
+    "create-deco": {
+      "status": "retained",
+      "target": "create-deco"
+    },
+    "create-connected": {
+      "status": "retained",
+      "target": "create-connected"
+    },
+    "create-central-kitchen": {
+      "status": "retained",
+      "target": "create-central-kitchen"
+    },
+    "create-new-age": {
+      "status": "retained",
+      "target": "create-new-age"
+    },
+    "create-big-cannons": {
+      "status": "retained",
+      "target": "create-big-cannons"
+    },
+    "create-jetpack": {
+      "status": "retained",
+      "target": "create-jetpack"
+    },
+    "create-diesel-generators": {
+      "status": "retained",
+      "target": "create-diesel-generators"
+    },
+    "fossils-and-archeology-revival": {
+      "status": "unavailable",
+      "target": null
+    },
+    "alexs-caves": {
+      "status": "replaced",
+      "target": "alexs-caves-unofficial-port"
+    },
+    "alexs-mobs": {
+      "status": "replaced",
+      "target": "alexs-mobs-1.21.1"
+    },
+    "threetag-palladium": {
+      "status": "unavailable",
+      "target": null
+    },
+    "fsang18s-heropack": {
+      "status": "unavailable",
+      "target": null
+    },
+    "satsu-iron-man-addon": {
+      "status": "unavailable",
+      "target": null
+    },
+    "powerborne-heroes": {
+      "status": "unavailable",
+      "target": null
+    },
+    "alienevo": {
+      "status": "unavailable",
+      "target": null
+    },
+    "omni-extras": {
+      "status": "unavailable",
+      "target": null
+    },
+    "into-the-omniverse": {
+      "status": "unavailable",
+      "target": null
+    },
+    "l_enders-cataclysm": {
+      "status": "retained",
+      "target": "l_enders-cataclysm"
+    },
+    "mowzies-mobs": {
+      "status": "retained",
+      "target": "mowzies-mobs"
+    },
+    "ice-and-fire-dragons": {
+      "status": "replaced",
+      "target": "iceandfire-ce"
+    },
+    "irons-spells-n-spellbooks": {
+      "status": "retained",
+      "target": "irons-spells-n-spellbooks"
+    },
+    "copycats": {
+      "status": "retained",
+      "target": "copycats"
+    },
+    "interiors": {
+      "status": "retained",
+      "target": "interiors"
+    },
+    "slice-and-dice": {
+      "status": "retained",
+      "target": "slice-and-dice"
+    },
+    "create-teleporters": {
+      "status": "retained",
+      "target": "create-teleporters"
+    },
+    "create-encased": {
+      "status": "retained",
+      "target": "create-encased"
+    },
+    "create-confectionery": {
+      "status": "retained",
+      "target": "create-confectionery"
+    },
+    "create-liquid-fuel": {
+      "status": "retained",
+      "target": "create-liquid-fuel"
+    },
+    "create-power-loader": {
+      "status": "retained",
+      "target": "create-power-loader"
+    },
+    "create-ore-excavation": {
+      "status": "retained",
+      "target": "create-ore-excavation"
+    },
+    "create-mechanical-extruder": {
+      "status": "retained",
+      "target": "create-mechanical-extruder"
+    },
+    "create-stuff-additions": {
+      "status": "retained",
+      "target": "create-stuff-additions"
+    },
+    "create-railways-navigator": {
+      "status": "retained",
+      "target": "create-railways-navigator"
+    },
+    "create-structures-arise": {
+      "status": "retained",
+      "target": "create-structures-arise"
+    },
+    "valkyrien-skies": {
+      "status": "unavailable",
+      "target": null
+    },
+    "eureka": {
+      "status": "unavailable",
+      "target": null
+    },
+    "create-clockwork": {
+      "status": "unavailable",
+      "target": null
+    },
+    "rechiseled-create": {
+      "status": "retained",
+      "target": "rechiseled-create"
+    },
+    "grappling-hook-mod": {
+      "status": "retained",
+      "target": "grappling-hook-mod"
+    },
+    "paragliders": {
+      "status": "retained",
+      "target": "paragliders"
+    },
+    "better-climbing": {
+      "status": "retained",
+      "target": "better-climbing"
+    },
+    "ziplines-rezipped": {
+      "status": "retained",
+      "target": "ziplines-rezipped"
+    },
+    "explorers-compass": {
+      "status": "retained",
+      "target": "explorers-compass"
+    },
+    "natures-compass": {
+      "status": "retained",
+      "target": "natures-compass"
+    },
+    "cc-tweaked": {
+      "status": "retained",
+      "target": "cc-tweaked"
+    },
+    "productivebees": {
+      "status": "retained",
+      "target": "productivebees"
+    },
+    "buzzier-bees": {
+      "status": "retained",
+      "target": "buzzier-bees"
+    },
+    "macaws-doors": {
+      "status": "retained",
+      "target": "macaws-doors"
+    },
+    "macaws-windows": {
+      "status": "retained",
+      "target": "macaws-windows"
+    },
+    "macaws-roofs": {
+      "status": "retained",
+      "target": "macaws-roofs"
+    },
+    "macaws-bridges": {
+      "status": "retained",
+      "target": "macaws-bridges"
+    },
+    "macaws-lights-and-lamps": {
+      "status": "retained",
+      "target": "macaws-lights-and-lamps"
+    },
+    "macaws-fences-and-walls": {
+      "status": "retained",
+      "target": "macaws-fences-and-walls"
+    },
+    "macaws-furniture": {
+      "status": "retained",
+      "target": "macaws-furniture"
+    },
+    "macaws-trapdoors": {
+      "status": "retained",
+      "target": "macaws-trapdoors"
+    },
+    "handcrafted": {
+      "status": "retained",
+      "target": "handcrafted"
+    },
+    "another-furniture": {
+      "status": "retained",
+      "target": "another-furniture"
+    },
+    "chipped": {
+      "status": "retained",
+      "target": "chipped"
+    },
+    "rechiseled": {
+      "status": "retained",
+      "target": "rechiseled"
+    },
+    "framedblocks": {
+      "status": "retained",
+      "target": "framedblocks"
+    },
+    "amendments": {
+      "status": "retained",
+      "target": "amendments"
+    },
+    "lootr": {
+      "status": "retained",
+      "target": "lootr"
+    },
+    "torchmaster": {
+      "status": "retained",
+      "target": "torchmaster"
+    },
+    "better-archeology": {
+      "status": "retained",
+      "target": "better-archeology"
+    },
+    "aquaculture": {
+      "status": "retained",
+      "target": "aquaculture"
+    },
+    "naturalist": {
+      "status": "retained",
+      "target": "naturalist"
+    },
+    "storagedrawers": {
+      "status": "retained",
+      "target": "storagedrawers"
+    },
+    "more-mob-variants": {
+      "status": "replaced",
+      "target": "more-mob-variants-renewed"
+    },
+    "etched": {
+      "status": "retained",
+      "target": "etched"
+    },
+    "immersive-paintings": {
+      "status": "retained",
+      "target": "immersive-paintings"
+    },
+    "nethers-delight": {
+      "status": "replaced",
+      "target": "my-nethers-delight"
+    },
+    "corn-delight": {
+      "status": "retained",
+      "target": "corn-delight"
+    },
+    "simply-swords": {
+      "status": "retained",
+      "target": "simply-swords"
+    },
+    "better-combat": {
+      "status": "retained",
+      "target": "better-combat"
+    },
+    "attributefix": {
+      "status": "retained",
+      "target": "attributefix"
+    },
+    "polymorph": {
+      "status": "retained",
+      "target": "polymorph"
+    },
+    "controlling": {
+      "status": "retained",
+      "target": "controlling"
+    },
+    "neruina": {
+      "status": "retained",
+      "target": "neruina"
+    },
+    "crafting-tweaks": {
+      "status": "retained",
+      "target": "crafting-tweaks"
+    },
+    "searchables": {
+      "status": "retained",
+      "target": "searchables"
+    },
+    "just-enough-resources-jer": {
+      "status": "retained",
+      "target": "just-enough-resources-jer"
+    },
+    "enchantment-descriptions": {
+      "status": "retained",
+      "target": "enchantment-descriptions"
+    },
+    "lmd": {
+      "status": "retained",
+      "target": "lmd"
+    },
+    "shoulder-surfing-reloaded": {
+      "status": "retained",
+      "target": "shoulder-surfing-reloaded"
+    },
+    "freecam": {
+      "status": "retained",
+      "target": "freecam"
+    },
+    "ok-zoomer": {
+      "status": "retained",
+      "target": "ok-zoomer"
+    },
+    "cmdcam": {
+      "status": "retained",
+      "target": "cmdcam"
+    },
+    "sound-physics-remastered": {
+      "status": "retained",
+      "target": "sound-physics-remastered"
+    },
+    "3dskinlayers": {
+      "status": "retained",
+      "target": "3dskinlayers"
+    },
+    "not-enough-animations": {
+      "status": "retained",
+      "target": "not-enough-animations"
+    },
+    "better-animations-collection": {
+      "status": "retained",
+      "target": "better-animations-collection"
+    },
+    "dynamic-lights": {
+      "status": "retained",
+      "target": "dynamic-lights"
+    }
+  },
+  "replacements": {
+    "alexs-caves": "alexs-caves-unofficial-port",
+    "alexs-mobs": "alexs-mobs-1.21.1",
+    "create-steam-n-rails": "create-steam-n-rails-1.21.1",
+    "ice-and-fire-dragons": "iceandfire-ce",
+    "nethers-delight": "my-nethers-delight",
+    "embeddium": "sodium",
+    "iron-chests": "upgraded-iron-chests",
+    "more-mob-variants": "more-mob-variants-renewed"
+  },
+  "new_create": [
+    "bellsandwhistles",
+    "create-design-n-decor",
+    "create-framed",
+    "create-contraption-terminals",
+    "create-pattern-schematics",
+    "create-tfmg",
+    "create-misc-and-things",
+    "create-trading-floor",
+    "create-radars",
+    "numismatics",
+    "create-copper-zinc",
+    "create-tweaked-controllers",
+    "create-factory"
+  ],
+  "new_aeronautics": [
+    "create-aeronautics",
+    "sable",
+    "create-aeroworks",
+    "create-aeronautics-gadgets-and-gizmos",
+    "create-propulsion-simulated",
+    "create-ballast",
+    "carryon-aeronautics-compat",
+    "create-simulated-additions",
+    "create-aeronautics-transmission-linkage",
+    "create-aeronautics-toolgun",
+    "jade-sable-compat",
+    "create-aeronautics-climbable-rope",
+    "create-tracks-plus",
+    "waystones-sable",
+    "create-aeronautics-portable-engine-liquid-fuel",
+    "create-aeronautics-physics-gantry",
+    "cc-sable"
+  ]
+}

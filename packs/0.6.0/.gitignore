@@ -1,0 +1,6 @@
+!/dist/
+/dist/*
+!/dist/cogs-claws-capes-0.6.0-singleplayer.mrpack
+/.cache/
+__pycache__/
+*.log

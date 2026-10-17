@@ -1,0 +1,300 @@
+{
+  "name": "Cogs, Claws & Capes 0.6 - Single-player",
+  "version": "0.6.0",
+  "summary": "Compatible 0.5 gameplay and QoL with expanded Create, Aeronautics and electrical engineering. Single-player on NeoForge 1.21.1.",
+  "minecraft": "1.21.1",
+  "loader": "neoforge",
+  "loader_version": "21.1.262",
+  "java": 21,
+  "distribution": "singleplayer",
+  "mods": {
+    "visual": [
+      "3dskinlayers",
+      "better-animations-collection",
+      "cmdcam",
+      "dynamic-lights",
+      "freecam",
+      "not-enough-animations",
+      "ok-zoomer",
+      "shoulder-surfing-reloaded",
+      "sound-physics-remastered"
+    ],
+    "dinosaurs": [
+      "alexs-caves-unofficial-port",
+      "alexs-mobs-1.21.1"
+    ],
+    "dependency of lmd": [
+      "almanac"
+    ],
+    "blocks_decor": [
+      "amendments",
+      "another-furniture",
+      "chipped",
+      "framedblocks",
+      "handcrafted",
+      "macaws-bridges",
+      "macaws-doors",
+      "macaws-fences-and-walls",
+      "macaws-furniture",
+      "macaws-lights-and-lamps",
+      "macaws-roofs",
+      "macaws-trapdoors",
+      "macaws-windows",
+      "rechiseled"
+    ],
+    "foundation": [
+      "appleskin",
+      "biomes-o-plenty",
+      "carry-on",
+      "chunky",
+      "clumps",
+      "comforts",
+      "corpse",
+      "farmers-delight",
+      "jade",
+      "jei",
+      "kubejs",
+      "kubejs-create",
+      "mouse-tweaks",
+      "open-parties-and-claims",
+      "simple-backups",
+      "sophisticated-backpacks",
+      "spark",
+      "supplementaries",
+      "terralith",
+      "toms-storage",
+      "upgraded-iron-chests",
+      "waystones",
+      "xaeros-minimap",
+      "xaeros-world-map",
+      "yungs-better-dungeons",
+      "yungs-better-mineshafts",
+      "yungs-better-strongholds"
+    ],
+    "gameplay": [
+      "aquaculture",
+      "better-archeology",
+      "corn-delight",
+      "etched",
+      "immersive-paintings",
+      "lootr",
+      "more-mob-variants-renewed",
+      "my-nethers-delight",
+      "naturalist",
+      "storagedrawers",
+      "torchmaster"
+    ],
+    "dependency of better-archeology": [
+      "architectury-api",
+      "resourceful-config"
+    ],
+    "dependency of chipped": [
+      "athena-ctm"
+    ],
+    "quality_of_life": [
+      "attributefix",
+      "controlling",
+      "crafting-tweaks",
+      "enchantment-descriptions",
+      "just-enough-resources-jer",
+      "lmd",
+      "neruina",
+      "polymorph",
+      "searchables"
+    ],
+    "dependency of waystones": [
+      "balm"
+    ],
+    "new_create": [
+      "bellsandwhistles",
+      "create-contraption-terminals",
+      "create-copper-zinc",
+      "create-design-n-decor",
+      "create-factory",
+      "create-framed",
+      "create-misc-and-things",
+      "create-pattern-schematics",
+      "create-radars",
+      "create-tfmg",
+      "create-trading-floor",
+      "create-tweaked-controllers",
+      "numismatics"
+    ],
+    "dependency of kubejs": [
+      "better-advanced-tooltips",
+      "rhino"
+    ],
+    "exploration": [
+      "better-climbing",
+      "explorers-compass",
+      "grappling-hook-mod",
+      "natures-compass",
+      "paragliders",
+      "ziplines-rezipped"
+    ],
+    "weapons": [
+      "better-combat",
+      "simply-swords"
+    ],
+    "dependency of buzzier-bees": [
+      "blueprint"
+    ],
+    "dependency of attributefix": [
+      "bookshelf-lib",
+      "prickle"
+    ],
+    "industry_bees": [
+      "buzzier-bees",
+      "cc-tweaked",
+      "productivebees"
+    ],
+    "aeronautics": [
+      "carryon-aeronautics-compat",
+      "cc-sable",
+      "create-aeronautics",
+      "create-aeronautics-climbable-rope",
+      "create-aeronautics-gadgets-and-gizmos",
+      "create-aeronautics-physics-gantry",
+      "create-aeronautics-portable-engine-liquid-fuel",
+      "create-aeronautics-toolgun",
+      "create-aeronautics-transmission-linkage",
+      "create-aeroworks",
+      "create-ballast",
+      "create-propulsion-simulated",
+      "create-simulated-additions",
+      "create-tracks-plus",
+      "jade-sable-compat",
+      "sable",
+      "waystones-sable"
+    ],
+    "dependency of alexs-caves-unofficial-port": [
+      "citadel-1.21.1-port"
+    ],
+    "dependency of better-combat": [
+      "cloth-config",
+      "playeranimator"
+    ],
+    "dependency of neruina": [
+      "configurable"
+    ],
+    "create_addons_2": [
+      "copycats",
+      "create-confectionery",
+      "create-encased",
+      "create-liquid-fuel",
+      "create-mechanical-extruder",
+      "create-ore-excavation",
+      "create-power-loader",
+      "create-railways-navigator",
+      "create-structures-arise",
+      "create-stuff-additions",
+      "create-teleporters",
+      "interiors",
+      "rechiseled-create",
+      "slice-and-dice"
+    ],
+    "create": [
+      "create",
+      "create-big-cannons",
+      "create-central-kitchen",
+      "create-connected",
+      "create-deco",
+      "create-diesel-generators",
+      "create-enchantment-industry",
+      "create-jetpack",
+      "create-new-age",
+      "create-steam-n-rails-1.21.1",
+      "createaddition"
+    ],
+    "dependency of create-enchantment-industry": [
+      "create-dragons-plus"
+    ],
+    "additional QoL and engineering": [
+      "create-electro-energetics",
+      "create-goggles",
+      "lithium",
+      "sophisticated-storage",
+      "sophisticated-storage-create-integration"
+    ],
+    "dependency of cmdcam": [
+      "creativecore"
+    ],
+    "dependency of l_enders-cataclysm": [
+      "curios",
+      "lionfish-api"
+    ],
+    "dependency of create-railways-navigator": [
+      "dragonlib"
+    ],
+    "performance": [
+      "entityculling",
+      "ferrite-core",
+      "immediatelyfast",
+      "modernfix",
+      "sodium"
+    ],
+    "dependency of rechiseled": [
+      "fusion-connected-textures",
+      "supermartijn642s-config-lib",
+      "supermartijn642s-core-lib"
+    ],
+    "dependency of immersive-paintings": [
+      "fzzy-config"
+    ],
+    "dependency of mowzies-mobs": [
+      "geckolib"
+    ],
+    "dependency of biomes-o-plenty": [
+      "glitchcore",
+      "terrablender"
+    ],
+    "challenge": [
+      "iceandfire-ce",
+      "l_enders-cataclysm",
+      "mowzies-mobs"
+    ],
+    "required by irons-spells-n-spellbooks": [
+      "irons-lib"
+    ],
+    "magic": [
+      "irons-spells-n-spellbooks"
+    ],
+    "dependency of iceandfire-ce": [
+      "jupiter",
+      "uranus"
+    ],
+    "dependency of create-jetpack": [
+      "kotlin-for-forge"
+    ],
+    "dependency of terralith": [
+      "lithostitched"
+    ],
+    "dependency of create-mechanical-extruder": [
+      "mechanicals-lib"
+    ],
+    "dependency of corn-delight": [
+      "mmlib"
+    ],
+    "dependency of supplementaries": [
+      "moonlight"
+    ],
+    "dependency of better-animations-collection": [
+      "puzzles-lib"
+    ],
+    "dependency of handcrafted": [
+      "resourceful-lib"
+    ],
+    "dependency of create-big-cannons": [
+      "rpl"
+    ],
+    "dependency of simply-swords": [
+      "simply-tooltips"
+    ],
+    "dependency of sophisticated-backpacks": [
+      "sophisticated-core"
+    ],
+    "dependency of yungs-better-dungeons": [
+      "yungs-api"
+    ]
+  }
+}

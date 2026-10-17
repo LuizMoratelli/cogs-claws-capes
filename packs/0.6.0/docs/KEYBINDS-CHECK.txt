@@ -1,0 +1,9 @@
+2026-10-17: disposable Linux NeoForge development client, full192-file selection.
+The temporary adapter compares every loaded mapping against the packaged options, then seeds sprint state at the end of a tick with the sprint mapping held/released. The next tick observes the unmodified packaged KubeJS script result. This verifies client script integration, not physical keyboard movement or all equipment combinations.
+
+[12:57:06] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:51]: KEYBINDS_LOADED verified=287 expected=287 toggleSprint=false toggleCrouch=false pass=true
+[12:57:11] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:61]: HOLD_RUN_CHECK held=true sprinting=true swimming=false pass=true
+[12:57:11] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:61]: HOLD_RUN_CHECK held=false sprinting=false swimming=false pass=true
+[12:57:11] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:61]: HOLD_RUN_CHECK held=true sprinting=true swimming=false pass=true
+[12:57:11] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:61]: HOLD_RUN_CHECK held=false sprinting=false swimming=false pass=true
+[12:57:11] [Render thread/INFO] [STDOUT/]: [isolated.validation.ClientCheck:pre:62]: KEYBINDS_INTEGRATION_RESULT PASS
